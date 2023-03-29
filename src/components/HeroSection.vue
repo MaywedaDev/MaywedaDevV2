@@ -17,15 +17,30 @@
             <floating-bubble position="bottom-0 -right-24"></floating-bubble>
         </div>
     </div>
+    <marquee-name />
+    <div class="w-full flex">
+        <div class="max-w-[720px] mx-auto py-20 relative before:absolute before:content-['ABOUT'] before:text-secondary 
+    before:right-0 before:top-0 before:text-[14px]">
+            <p class="text-center text-secondary text-[18px] font-syne">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on. <br>
+                <br>I first had interest in <span>programming</span> due to video games as I've always wanted to 
+                understand how computer games and programs are made. Fast forward today and I'm a <span>
+                Fullstack developer</span>. I have a solid understanding of Bootstrap, Jquery, React, Angular, 
+                Vue and Typescript.<br><br> My goal is to gain enough experience to be one of the best software engineers
+                in my community. My main focus is letting my work standout while being different and I'm very committed to my work. 
+            </p>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import FloatingBubble from './FloatingBubble.vue'
+import MarqueeName from './MarqueeName.vue';
 
 export default defineComponent({
     components: {
-        FloatingBubble
+        FloatingBubble,
+        MarqueeName
     }
 })
 </script>

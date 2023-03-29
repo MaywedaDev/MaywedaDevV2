@@ -14,7 +14,10 @@ module.exports = {
         "grad-white": "#D9CACA",
         "grad-purple": "#9747FF",
         red: "#E11717"
-      }
+      },
+      fontFamily: {
+        'syne': ['Syne', "sans-serif"]
+      },
     },
   },
   plugins: [],

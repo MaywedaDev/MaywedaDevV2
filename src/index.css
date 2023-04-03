@@ -4,4 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: Clash;
+    src: url("./assets/Fonts/ClashDisplay-Variable.ttf") format('truetype');
+}
+
+:root {
+    font-family: 'Syne', sans-serif;
+}
+
 

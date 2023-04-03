@@ -1,7 +1,10 @@
 <template>
-    <div class="border border-white py-3 h-[62px] w-full overflow-hidden">
+    <div class="border-y border-white py-3 h-[98px] w-full overflow-hidden" id="marquee">
         <div ref="marquee" class="flex justify-between relative">
-            <p v-for="el in 7" class="w-[250px] uppercase text-3xl text-secondary absolute -left-[250px]">Mayweda Dev</p>
+            <div v-for="el in 3" class="w-[700px] absolute -left-[700px] flex items-center">
+                <p class="uppercase text-7xl text-body font-semibold font-clash">Mayweda Dev</p>
+                <star-icon class="mx-auto"/>
+            </div>
         </div>
     </div>
 </template>
@@ -9,29 +12,33 @@
 <script lang="ts">
 import gsap from 'gsap'
 import { defineComponent, onMounted, ref } from 'vue';
+import StarIcon from './StarIcon.vue';
 
 export default defineComponent({
+    components: {
+        StarIcon
+    },
     setup(){
         const marquee = ref<HTMLElement>()
 
-        const totalWidth = 250 * 7
+        const totalWidth = 700 * 3
 
         const mod = gsap.utils.wrap(0, totalWidth)
 
         onMounted(() => {
 
-            const boxes = marquee.value?.querySelectorAll('p')
+            const boxes = marquee.value?.querySelectorAll('div')
 
             // gsap.set(marquee.value, {
             //     xPercent: 25
             // })
-
+            // @ts-ignore
             gsap.set(boxes, {
             x: function(i){
-                return i * 250
+                return i * 700
             }
         })
-
+        // @ts-ignore
         gsap.to(boxes, {
             x: '+=' + totalWidth,
             modifiers: {
@@ -49,3 +56,10 @@ export default defineComponent({
     }
 })
 </script>
+
+<style scoped>
+    p{
+        text-shadow: 1px 1px rgb(217, 217, 217),
+                     -1px -1px rgb(217, 217, 217);
+    }
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute w-[72px] h-[72px] bg-gradient-to-r from-grad-white to-grad-purple rounded-3xl -z-10 rotate-[-22deg]" :class="position"></div>
+    <div class="absolute w-[72px] h-[72px] bg-gradient-to-r from-grad-white to-grad-purple rounded-3xl -z-10 rotate-[-22deg] bubble" :class="position"></div>
 </template>
 
 <script lang="ts">

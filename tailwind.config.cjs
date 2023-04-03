@@ -16,7 +16,7 @@ module.exports = {
         red: "#E11717"
       },
       fontFamily: {
-        'syne': ['Syne', "sans-serif"]
+        'clash': ["Clash", "sans-serif"]
       },
     },
   },

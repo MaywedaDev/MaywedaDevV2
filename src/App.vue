@@ -1,17 +1,19 @@
 
 <template>
   <div class="min-h-screen bg-body">
-    <hero-section />
+    <home-page />
+    
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from "vue";
-import HeroSection from "./components/HeroSection.vue";
+
+import HomePage from "./components/HomePage.vue";
 
   export default defineComponent({
     components: {
-      HeroSection
+      HomePage
     }
   })
 </script>

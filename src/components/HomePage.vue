@@ -1,14 +1,17 @@
 <template>
     <div>
         <hero-section />
-        <div class="px-8 md:px-12">
+        <div class="px-6 md:px-12">
         <section-wrapper name="WORKS" position="left">
-            <marquee-scroll v-for="(el, i) in 4" :key="i"></marquee-scroll>
+            <marquee-scroll title="Mayweda" />
+            <marquee-scroll title="QuizWiz" />
+            <marquee-scroll title="Nftocean" />
+            <marquee-scroll title="Allfootball" />
         </section-wrapper>
 
         <section-wrapper name="INTERESTS" position="left">
-            <div class="mt-12 py-12 text-secondary flex justify-between items-center">
-                <div>
+            <div class="mt-12 py-12 text-secondary flex flex-col md:flex-row justify-between items-center">
+                <div class="my-4">
                     <p class="text-2xl">Here is a few other technologies I'm also familiar with:</p>
                     <ul class="text-2xl list-disc px-8">
                         <li>Git and Github</li>
@@ -20,7 +23,7 @@
                         <li>NextJS</li>
                     </ul>
                 </div>
-                <div class="bg-secondary h-[500px] w-[350px] rounded-2xl"></div>
+                <div class="bg-secondary h-[500px] w-[350px] rounded-2xl my-4"></div>
             </div>
         </section-wrapper>
         </div>   

@@ -7,10 +7,10 @@
             <li class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</li>
         </ul>
     </nav>
-    <div class="w-full h-[500px] flex">
-        <div class="mx-auto my-auto w-[600px] relative z-10">
+    <div class="w-full h-[500px] flex  overflow-hidden">
+        <div class="mx-auto my-auto w-[600px] relative z-10 ">
             <h6 class="text-secondary ml-10 name">Hello I'm</h6>
-            <h1 class="text-secondary font-clash text-center text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
+            <h1 class="text-secondary font-clash text-center text-8xl md:text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
             <floating-bubble position="top-5 -left-10"></floating-bubble>
             <floating-bubble position="-bottom-7 -left-10"></floating-bubble>
             <floating-bubble position="bottom-24 -right-5"></floating-bubble>
@@ -20,7 +20,7 @@
     <marquee-name />
     <section-wrapper name="ABOUT" position="right">
         <div class="w-full flex py-16">
-            <p class="text-center mx-auto text-secondary text-[18px] font-syne max-w-[720px]">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on. <br>
+            <p class="text-center px-8 mx-auto text-secondary text-[18px] font-syne max-w-[720px]">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on. <br>
                 <br>I first had interest in <span>programming</span> due to video games as I've always wanted to 
                 understand how computer games and programs are made. Fast forward today and I'm a <span>
                 Fullstack developer</span>. I have a solid understanding of Bootstrap, Jquery, React, Angular, 

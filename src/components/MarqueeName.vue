@@ -44,7 +44,7 @@ export default defineComponent({
             modifiers: {
                 x: x => mod(parseFloat(x)) + "px"
             },
-            duration: 8,
+            duration: 10,
             ease: "none",
             repeat: -1
             })

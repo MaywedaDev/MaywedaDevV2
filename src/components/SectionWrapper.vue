@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import gsap from "gsap"
 
@@ -25,11 +26,24 @@ export default defineComponent({
         }
     },
     setup(props){
+        gsap.registerPlugin(ScrollTrigger)
 
         const mqScroll = ref()
         onMounted(() => {
             gsap.set(mqScroll.value, {
                 "--section-name": `'${props.name}'`
+            })
+
+            gsap.from(mqScroll.value, {
+                y: 100,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'Power1.easeOut',
+                scrollTrigger: {
+                    trigger: mqScroll.value,
+                    start: "top 75%",
+                    end: "top 80%",
+                }
             })
         })
 

@@ -19,13 +19,16 @@
     </div>
     <marquee-name />
     <section-wrapper name="ABOUT" position="right">
-        <div class="w-full flex py-16">
-            <p class="text-center px-8 mx-auto text-secondary text-[18px] font-syne max-w-[720px]">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on. <br>
-                <br>I first had interest in <span>programming</span> due to video games as I've always wanted to 
-                understand how computer games and programs are made. Fast forward today and I'm a <span>
-                Fullstack developer</span>. I have a solid understanding of Bootstrap, Jquery, React, Angular, 
-                Vue and Typescript.<br><br> My goal is to gain enough experience to be one of the best software engineers
-                in my community. My main focus is letting my work standout while being different and I'm very committed to my work. 
+        <div class="w-full flex flex-col py-16">
+            <p class="text-center px-8 mx-auto my-2 anim-text text-secondary text-[18px] font-syne max-w-[720px]">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on.  
+            </p>
+            <p class="text-center px-8 mx-auto my-2 anim-text text-secondary text-[18px] font-syne max-w-[720px]"> I first had interest in programming due to video games as I've always wanted to 
+                understand how computer games and programs are made. Fast forward today and I'm a 
+                Fullstack developer.
+            </p>
+            <p class="text-center px-8 mx-auto my-2 anim-text text-secondary text-[18px] font-syne max-w-[720px]">I have a solid understanding of Bootstrap, Jquery, React, Angular, 
+                Vue and Typescript. My goal is to gain enough experience to be one of the best software engineers
+                in my community. My main focus is letting my work standout while being different and I'm very committed to my work.
             </p>
         </div>
     </section-wrapper>
@@ -38,6 +41,7 @@ import MarqueeName from './MarqueeName.vue';
 import SectionWrapper from './SectionWrapper.vue';
 import SplitType from "split-type"
 import  gsap  from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default defineComponent({
     components: {
@@ -48,8 +52,10 @@ export default defineComponent({
     setup(){
         const header = ref<HTMLElement>()
         const t1 = gsap.timeline()
+        gsap.registerPlugin(ScrollTrigger)
         onMounted(() => {
             const headerText = new SplitType(".name", {types: "words, chars"})
+            const animText = new SplitType('.anim-text', {types: "lines, words"})
 
             t1.from('.name .char', {yPercent: 130,
                 opacity: 0,
@@ -66,9 +72,19 @@ export default defineComponent({
                 yPercent: 100,
                 opacity: 0 
             }, "<")
+             
 
-
-
+            gsap.from(['.anim-text .word', '.anim-text .line'], { 
+                duration: 1,
+                yPercent: 110,
+                delay: 0.5,
+                ease: 'Power1.easeInOut',
+                scrollTrigger: {
+                    trigger: ".anim-text",
+                    start: "top 75%",
+                    end: "top 80%",
+                }
+            })
         })
 
         return{
@@ -80,7 +96,7 @@ export default defineComponent({
 
 <style>
 
-    .name .word{
+    .name .word, .anim-text .line{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         
     }

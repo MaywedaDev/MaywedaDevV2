@@ -40,10 +40,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HeroSection from "./HeroSection.vue";
-import MarqueeScroll from "./MarqueeScroll.vue";
-import SectionWrapper from "./SectionWrapper.vue";
-import Footer from './Footer.vue';
+import HeroSection from "../components/HeroSection.vue";
+import MarqueeScroll from "../components/MarqueeScroll.vue";
+import SectionWrapper from "../components/SectionWrapper.vue";
+import Footer from '../components/Footer.vue';
 
 export default defineComponent({
     components:{

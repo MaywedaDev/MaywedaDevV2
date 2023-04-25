@@ -10,7 +10,7 @@
     <div class="w-full h-[500px] flex  overflow-hidden">
         <div class="mx-auto my-auto w-[600px] relative z-10 ">
             <h6 class="text-secondary ml-10 name">Hello I'm</h6>
-            <h1 class="text-secondary font-clash text-center text-8xl md:text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
+            <h1 class="text-secondary font-clash text-center text-8xl font-700 md:text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
             <floating-bubble position="top-5 -left-10"></floating-bubble>
             <floating-bubble position="-bottom-7 -left-10"></floating-bubble>
             <floating-bubble position="bottom-24 -right-5"></floating-bubble>
@@ -55,7 +55,7 @@ export default defineComponent({
         gsap.registerPlugin(ScrollTrigger)
         onMounted(() => {
             const headerText = new SplitType(".name", {types: "words, chars"})
-            const animText = new SplitType('.anim-text', {types: "lines, words"})
+            const animText = new SplitType('.anim-text', {types: "lines, chars"})
 
             t1.from('.name .char', {yPercent: 130,
                 opacity: 0,
@@ -74,10 +74,12 @@ export default defineComponent({
             }, "<")
              
 
-            gsap.from(['.anim-text .word', '.anim-text .line'], { 
+            gsap.from('.anim-text .char', { 
                 duration: 1,
                 yPercent: 110,
-                delay: 0.5,
+                stagger: {
+                    amount: 2.5
+                },
                 ease: 'Power1.easeInOut',
                 scrollTrigger: {
                     trigger: ".anim-text",

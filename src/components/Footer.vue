@@ -7,7 +7,7 @@
             <p class="max-w-[450px] text-xl text-white mx-auto text-center">Got a question, proposal or want to work together on something? Feel free to reach out.</p>
         </div>
         <div class="flex flex-col">
-            <h1 class="text-8xl text-white uppercase text-center font-bold my-4">Have a project in mind?</h1>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white uppercase text-center font-bold my-4">Have a project in mind?</h1>
             <ul class="w-[250px] flex justify-between uppercase text-white my-4 mx-auto text-xl">
                 <li>EM</li>
                 <li>TW</li>

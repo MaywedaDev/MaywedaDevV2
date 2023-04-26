@@ -3,10 +3,10 @@
         <hero-section />
         <div class="px-6 md:px-12">
             <section-wrapper name="WORKS" position="left">
-                <marquee-scroll title="Mayweda" />
-                <marquee-scroll title="QuizWiz" />
-                <marquee-scroll title="Nftocean" />
-                <marquee-scroll title="Allfootball" />
+                <marquee-scroll title="Mayweda" direction="ltr" />
+                <marquee-scroll title="QuizWiz" direction="rtl" />
+                <marquee-scroll title="Nftocean" direction="ltr"/>
+                <marquee-scroll title="Allfootball" direction="rtl" />
             </section-wrapper>
 
             <section-wrapper name="INTERESTS" position="left">
@@ -28,9 +28,9 @@
             </section-wrapper>
 
             <div class="">
-                <marquee-scroll title="React Markdown" />
-                <marquee-scroll title="QR Code" />
-                <marquee-scroll title="Ask a question" />
+                <marquee-scroll title="React Markdown" direction="rtl" />
+                <marquee-scroll title="QR Code" direction="ltr" />
+                <marquee-scroll title="Ask a question" direction="rtl" />
             </div>
             <Footer />
             

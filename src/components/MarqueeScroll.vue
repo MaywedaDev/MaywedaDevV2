@@ -1,7 +1,7 @@
 <template>
     <div class="border-b border-secondary w-full py-10 " >
         <div class="overflow-hidden">
-            <p ref="name" class="text-7xl text-secondary uppercase">{{ title }}</p>
+            <p ref="name" class="text-7xl whitespace-nowrap text-secondary uppercase">{{ title }}</p>
         </div>
     </div>
 </template>
@@ -16,9 +16,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
             title: {
                 type: String,
                 required: true
+            },
+            direction: {
+                type: String,
+                default: "ltr"
             }
         }, 
-        setup(){
+        setup(props){
             const name = ref()
 
             
@@ -35,14 +39,27 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
                     }
                 })
 
-                gsap.set(name.value, {
-                   xPercent: -10 
-                })
+                if(props.direction === 'ltr'){
+                    gsap.set(name.value, {
+                        xPercent: -10 
+                    })
 
-                tl.to(name.value, {
-                    xPercent: 60,
-                    ease: "Power1.easeOut"
-                })
+                    tl.to(name.value, {
+                        xPercent: 60,
+                        ease: "Power1.easeOut"
+                    })
+                }
+                else{
+                    gsap.set(name.value, {
+                        xPercent: 90 
+                    })
+
+                    tl.to(name.value, {
+                        xPercent: -40,
+                        ease: "Power1.easeOut"
+                    })
+                }
+                
 
                 
             })

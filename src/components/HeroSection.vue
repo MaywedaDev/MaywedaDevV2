@@ -10,7 +10,7 @@
     <div class="w-full h-[500px] flex  overflow-hidden">
         <div class="mx-auto my-auto w-[600px] relative z-10 ">
             <h6 class="text-secondary ml-10 name">Hello I'm</h6>
-            <h1 class="text-secondary font-clash text-center text-8xl font-700 md:text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
+            <h1 class="text-secondary font-clash text-center text-7xl font-700 md:text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
             <floating-bubble position="top-5 -left-10"></floating-bubble>
             <floating-bubble position="-bottom-7 -left-10"></floating-bubble>
             <floating-bubble position="bottom-24 -right-5"></floating-bubble>
@@ -20,13 +20,13 @@
     <marquee-name />
     <section-wrapper name="ABOUT" position="right">
         <div class="w-full flex flex-col py-16">
-            <p class="text-center px-8 mx-auto my-2 anim-text text-secondary text-[18px] font-syne max-w-[720px]">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on.  
+            <p class="px-8 mx-auto my-2 anim-text text-secondary w-full text-[18px] font-syne  max-w-[720px]">Hello!. My name is Enyo. I'm a dedicated Fullstack developer that works with current web technologies such as React, Vue and Node and so on.  
             </p>
-            <p class="text-center px-8 mx-auto my-2 anim-text text-secondary text-[18px] font-syne max-w-[720px]"> I first had interest in programming due to video games as I've always wanted to 
+            <p class="px-8 mx-auto my-2 anim-text text-secondary w-full text-[18px] font-syne  max-w-[720px]"> I first had interest in programming due to video games as I've always wanted to 
                 understand how computer games and programs are made. Fast forward today and I'm a 
                 Fullstack developer.
             </p>
-            <p class="text-center px-8 mx-auto my-2 anim-text text-secondary text-[18px] font-syne max-w-[720px]">I have a solid understanding of Bootstrap, Jquery, React, Angular, 
+            <p class="px-8 mx-auto my-2 anim-text text-secondary w-full text-[18px] font-syne max-w-[720px]">I have a solid understanding of Bootstrap, Jquery, React, Angular, 
                 Vue and Typescript. My goal is to gain enough experience to be one of the best software engineers
                 in my community. My main focus is letting my work standout while being different and I'm very committed to my work.
             </p>
@@ -55,7 +55,7 @@ export default defineComponent({
         gsap.registerPlugin(ScrollTrigger)
         onMounted(() => {
             const headerText = new SplitType(".name", {types: "words, chars"})
-            const animText = new SplitType('.anim-text', {types: "lines, chars"})
+            const animText = new SplitType('.anim-text', {types: "lines, words"})
 
             t1.from('.name .char', {yPercent: 130,
                 opacity: 0,
@@ -74,7 +74,7 @@ export default defineComponent({
             }, "<")
              
 
-            gsap.from('.anim-text .char', { 
+            gsap.from('.anim-text .word', { 
                 duration: 1,
                 yPercent: 110,
                 stagger: {

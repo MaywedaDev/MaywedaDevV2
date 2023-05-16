@@ -1,11 +1,13 @@
 <template>
-    <nav class=" w-full px-10 py-3 after:absolute after:bg-grey-100 relative after:w-full after:h-[2px] after:bottom-0 after:left-0">
-        <ul class="flex w-full justify-between items-center">
-            <li class="text-secondary text-[14px] uppercase" ><p>Mayweda <br /> Dev</p></li>
-            <li class="text-accent text-[14px] uppercase">Fullstack Developer <br /> Portfolio 2021 - 2023</li>
-            <li class="text-accent text-[14px] uppercase">Available for freelance <br />work from April 2023</li>
-            <li class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</li>
-        </ul>
+    <nav class=" w-full px-10 py-3 after:absolute after:bg-grey-100 relative after:h-[2px] after:bottom-0 after:left-0">
+        <div ref="navContent" class="flex w-full justify-between items-center">
+            <p class="text-secondary text-2xl">mayweda <br /> Dev</p>
+            <div class="flex  gap-x-6 before:h-full relative before:w-px before:left-[50%] before:bg-secondary before:absolute">
+                <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">about</p>
+                <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">works</p>
+            </div>
+            <p class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</p>
+        </div>
     </nav>
     <div class="w-full h-[500px] flex  overflow-hidden">
         <div class="mx-auto my-auto w-[600px] relative z-10 ">
@@ -51,6 +53,7 @@ export default defineComponent({
     },
     setup(){
         const header = ref<HTMLElement>()
+        const navContent = ref<HTMLDivElement>()
         const t1 = gsap.timeline()
         gsap.registerPlugin(ScrollTrigger)
         onMounted(() => {
@@ -72,6 +75,16 @@ export default defineComponent({
                 yPercent: 100,
                 opacity: 0 
             }, "<")
+            //@ts-ignore
+            .from([...navContent.value?.children], {
+                yPercent: -100,
+                stagger: 0.2,
+                opacity: 0
+            })
+            .to('nav', {
+                '--divider-width': '100%',
+                duration: 0.8
+            })
              
 
             gsap.from('.anim-text .word', { 
@@ -90,13 +103,21 @@ export default defineComponent({
         })
 
         return{
-            header
+            header,
+            navContent
         }
     }
 })
 </script>
 
 <style>
+
+    nav{
+        --divider-width: 0
+    }
+    nav::after{
+        width: var(--divider-width);
+    }
 
     .name .word, .anim-text .line{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

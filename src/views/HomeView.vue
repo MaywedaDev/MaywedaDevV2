@@ -27,11 +27,6 @@
                 </div>
             </section-wrapper>
 
-            <div class="">
-                <marquee-scroll title="React Markdown" direction="rtl" />
-                <marquee-scroll title="QR Code" direction="ltr" />
-                <marquee-scroll title="Ask a question" direction="rtl" />
-            </div>
             <Footer />
             
         </div>   

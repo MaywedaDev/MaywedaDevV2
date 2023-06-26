@@ -3,8 +3,8 @@
         <div ref="navContent" class="flex w-full justify-between items-center">
             <p class="text-secondary text-2xl">mayweda <br /> Dev</p>
             <div class="flex  gap-x-6 before:h-full relative before:w-px before:left-[50%] before:bg-secondary before:absolute">
-                <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">about</p>
-                <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">works</p>
+                <router-link to="/github" class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">github</router-link>
+                <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">projects</p>
             </div>
             <p class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</p>
         </div>
@@ -52,11 +52,14 @@ export default defineComponent({
         SectionWrapper
     },
     setup(){
-        const header = ref<HTMLElement>()
         const navContent = ref<HTMLDivElement>()
         const t1 = gsap.timeline()
         gsap.registerPlugin(ScrollTrigger)
+
+        const body: HTMLElement = document.body
+
         onMounted(() => {
+            body.style.position = 'fixed'
             const headerText = new SplitType(".name", {types: "words, chars"})
             const animText = new SplitType('.anim-text', {types: "lines, words"})
 
@@ -83,7 +86,10 @@ export default defineComponent({
             })
             .to('nav', {
                 '--divider-width': '100%',
-                duration: 0.8
+                duration: 0.8,
+                onComplete: () => {
+                    body.style.position = "static"
+                }
             })
              
 
@@ -103,7 +109,6 @@ export default defineComponent({
         })
 
         return{
-            header,
             navContent
         }
     }

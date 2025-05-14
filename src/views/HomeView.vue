@@ -1,74 +1,96 @@
 <template>
-    <div>
-        <hero-section />
-        <div class="px-6 md:px-12">
-            <section-wrapper name="WORKS" position="left">
+  <div>
+    <hero-section />
+    <div class="">
+      <projects-section />
+      <!-- <section-wrapper name="WORKS" position="left">
                 <marquee-scroll title="Mayweda" direction="ltr" />
                 <marquee-scroll title="QuizWiz" direction="rtl" />
                 <marquee-scroll title="Nftocean" direction="ltr"/>
                 <marquee-scroll title="Allfootball" direction="rtl" />
-            </section-wrapper>
+            </section-wrapper> -->
 
-            <section-wrapper name="INTERESTS" position="left">
-                <div class="mt-12 py-12 text-secondary flex flex-col md:flex-row justify-between items-center">
-                    <div class="my-4 flex flex-wrap gap-y-4">
-                        <!-- <p class="text-2xl">Here is a few other technologies I'm also familiar with:</p> -->
-                        <ul class="text-md list-disc px-8">
-                            <p class="uppercase font-bold mb-6 text-white">Languages</p>
-                            <li class="ml-3">HTML</li>
-                            <li class="ml-3">CSS</li>
-                            <li class="ml-3">JavaScript</li>
-                            <li class="ml-3">Java</li>
-                            <li class="ml-3">SASS/SCSS</li>
-                            <li class="ml-3">Typescript</li>
-                        </ul>
+      <section-wrapper title="about" ltr>
+        <template #sub>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor
+            a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut
+            tortor. Urna interdum lobortis in adipiscing. Facilisi nisl
+            sollicitudin id elementum morbi mi.
+          </p>
+          <p class="mt-10">
+            Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor
+            a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut
+            tortor. Urna interdum lobortis in adipiscing. Facilisi nisl
+            sollicitudin id elementum morbi mi.
+          </p>
+        </template>
+        <template #content>
+          <div
+            class="w-full max-w-[600px] h-[500px] rounded-lg bg-grey-100"
+          ></div>
+        </template>
+      </section-wrapper>
 
-                        <ul class="text-md list-disc px-8">
-                            <p class="uppercase font-bold mb-6 text-white">Frameworks and Libraries</p>
-                            <li class="ml-3">Vue.js</li>
-                            <li class="ml-3">React</li>
-                            <li class="ml-3">Angular</li>
-                            <li class="ml-3">NextJS</li>
-                            <li class="ml-3">Nuxt</li>
-                            <li class="ml-3">Node(Express)</li>
-                            <li class="ml-3">Gsap</li>
-                        </ul>
+      <section-wrapper title="tools">
+        <template #sub>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor
+            a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut
+            tortor. Urna interdum lobortis in adipiscing. Facilisi nisl
+            sollicitudin id elementum morbi mi.
+          </p>
+          <p class="mt-10">
+            Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor
+            a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut
+            tortor. Urna interdum lobortis in adipiscing. Facilisi nisl
+            sollicitudin id elementum morbi mi.
+          </p>
+        </template>
+        <template #content>
+          <div
+            class="w-full max-w-[600px] h-[500px] rounded-lg bg-grey-100"
+          ></div>
+        </template>
+      </section-wrapper>
 
-                        <ul class="text-md list-disc px-8">
-                            <p class="uppercase font-bold mb-6 text-white">Others</p>
-                            <li class="ml-3">Git and Github</li>
-                            <li class="ml-3">Firebase and Supabase</li>
-                            <li class="ml-3">Three.js</li>
-                            <li class="ml-3">Redux</li>
-                            <li class="ml-3">Jest</li>
-                            <li class="ml-3">Material UI</li>
-                            <li class="ml-3">Bootstrap</li>
-                            <li class="ml-3">Tailwind</li>
-                        </ul>
-                    </div>
-                    <div class="bg-secondary h-[500px] w-[350px] rounded-2xl my-4"></div>
-                </div>
-            </section-wrapper>
+      <section-wrapper title="Experience">
+        <template #content>
+          <div class="max-w-[600px] space-y-14">
+            <ExpItem
+              company-name="Company Name"
+              job-title="Fullstack Developer"
+              duration="2024 - Present"
+              :description="desc"
+              v-for="(item, i) in 7"
+              :key="i"
+            />
+          </div>
+        </template>
+      </section-wrapper>
 
-            <Footer />
-            
-        </div>   
+      <marquee-name />
+
+      <div
+        class="w-full max-w-[1200px] h-[500px] rounded-lg bg-grey-100 mx-auto my-10"
+      ></div>
+
+      <marquee-name />
+      <Footer />
     </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import HeroSection from "../components/HeroSection.vue";
 import MarqueeScroll from "../components/MarqueeScroll.vue";
 import SectionWrapper from "../components/SectionWrapper.vue";
-import Footer from '../components/Footer.vue';
+import Footer from "../components/Footer.vue";
+import ProjectsSection from "../components/ProjectsSection.vue";
+import ExpItem from "../components/ExpItem.vue";
+import MarqueeName from "../components/MarqueeName.vue";
 
-export default defineComponent({
-    components:{
-        HeroSection,
-        MarqueeScroll,
-        SectionWrapper,
-        Footer
-    }
-})
+const aboutSub = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut tortor. Urna interdum lobortis in adipiscing. Facilisi nisl sollicitudin id elementum morbi mi.`;
+
+const desc = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare`;
 </script>

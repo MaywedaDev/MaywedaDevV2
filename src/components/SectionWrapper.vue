@@ -1,65 +1,46 @@
 <template>
-    <div class="relative before:absolute before:top-0 before:text-secondary before:text-2xl  before:z-10 before:bg-body 
-    after:absolute after:w-full after:top-3 after:left-0 after:h-px after:bg-secondary after:z-0 mqscroll" 
-    :class="` ${ position === 'right' ? 'before:right-40' : 'before:left-40' }`" ref="mqScroll">
-        <slot ></slot>
+  <div
+    class="px-[112px] py-12 border-t border-[#484848] w-full flex gap-10 justify-between"
+    :class="{ 'flex-row-reverse': ltr }"
+  >
+    <div class="w-full max-w-[500px]">
+      <h2 class="text-red text-[64px] tBebas">{{ title }}</h2>
+      <slot name="sub"></slot>
     </div>
+    <slot name="content"></slot>
+  </div>
 </template>
 
 <!--  -->
 
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+<script lang="ts" setup>
+import { onMounted, ref } from "vue";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import gsap from "gsap"
+import gsap from "gsap";
 
-export default defineComponent({
-    props: {
-        name: {
-            type: String,
-            default: 'Unknown'
-        },
-        position: {
-            type: String,
-            default: "left"
-        }
-    },
-    setup(props){
-        gsap.registerPlugin(ScrollTrigger)
-
-        const mqScroll = ref()
-        onMounted(() => {
-            gsap.set(mqScroll.value, {
-                "--section-name": `'${props.name}'`
-            })
-
-            gsap.from(mqScroll.value, {
-                y: 100,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'Power1.easeOut',
-                scrollTrigger: {
-                    trigger: mqScroll.value,
-                    start: "top 75%",
-                    end: "top 80%",
-                }
-            })
-        })
-
-        return {
-            mqScroll
-        }
-    }
-})
+const props = defineProps({
+  title: {
+    type: String,
+    default: "Unknown",
+  },
+  ltr: {
+    type: Boolean,
+    default: false,
+  },
+  // position: {
+  //   type: String,
+  //   default: "left",
+  // },
+});
 </script>
 
 <style>
-    .mqscroll{
-        --section-name: '';
-    }
-    .mqscroll::before{
-        content: var(--section-name);
-        position: absolute;
-    }
+.mqscroll {
+  --section-name: "";
+}
+.mqscroll::before {
+  content: var(--section-name);
+  position: absolute;
+}
 </style>

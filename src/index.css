@@ -1,16 +1,26 @@
 /* ./src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: Clash;
-    src: url("./assets/Fonts/ClashDisplay-Variable.ttf") format('truetype');
+  font-family: Clash;
+  src: url("./assets/Fonts/ClashDisplay-Variable.ttf") format("truetype");
 }
 
 :root {
-    font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
 }
 
+.tBebas {
+  font-family: "Bebas Neue", serif;
+}
 
+.tEllen {
+  font-family: "Beth Ellen", serif;
+  font-weight: 400;
+  font-style: normal;
+}

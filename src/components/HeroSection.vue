@@ -101,21 +101,21 @@ onMounted(() => {
     stagger: 0.08,
     ease: "back.out",
   })
-    .from(".bubble", {
-      y: 60,
-      // x: 30,
-      opacity: 0,
-      duration: 0.6,
-      ease: "back.out",
-    })
-    .from(
-      "#marquee",
-      {
-        yPercent: 100,
-        opacity: 0,
-      },
-      "<"
-    )
+    // .from(".bubble", {
+    //   y: 60,
+    //   // x: 30,
+    //   opacity: 0,
+    //   duration: 0.6,
+    //   ease: "back.out",
+    // })
+    // .from(
+    //   "#marquee",
+    //   {
+    //     yPercent: 100,
+    //     opacity: 0,
+    //   },
+    //   "<"
+    // )
     //@ts-ignore
     .from([...navContent.value?.children], {
       yPercent: -100,

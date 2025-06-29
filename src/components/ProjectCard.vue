@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-100 max-w-[600px] p-5 bg-cardBg rounded-lg flex flex-col gap-y-4"
+    class="w-100 max-w-[600px] p-5 bg-cardBg rounded-lg flex flex-col gap-y-4 project-card"
   >
     <div class="w-100 rounded-md bg-contentBg h-[395px]"></div>
     <div class="flex justify-between items-end">

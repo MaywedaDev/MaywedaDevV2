@@ -56,7 +56,7 @@
       ref="pixelCont"
     >
       <img
-        src="../assets/images/2703803.jpg"
+        src="../assets/images/file_00000000131861f991edae5699a0fe7e.png"
         class="w-full absolute top-0 left-0 h-full object-cover"
         alt=""
       />

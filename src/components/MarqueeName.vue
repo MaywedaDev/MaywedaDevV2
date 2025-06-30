@@ -2,7 +2,7 @@
   <div class="py-3 h-[98px] w-full overflow-hidden" id="marquee">
     <div ref="marquee" class="flex justify-between relative">
       <div
-        v-for="el in 3"
+        v-for="el in 5"
         class="w-[700px] absolute -left-[700px] flex items-center"
       >
         <p class="uppercase text-7xl text-body font-semibold font-clash">
@@ -26,7 +26,7 @@ export default defineComponent({
   setup() {
     const marquee = ref<HTMLElement>();
 
-    const totalWidth = 700 * 3;
+    const totalWidth = 700 * 5;
 
     const mod = gsap.utils.wrap(0, totalWidth);
 

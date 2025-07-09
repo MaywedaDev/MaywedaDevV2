@@ -87,7 +87,7 @@ gsap.registerPlugin(ScrollTrigger);
 const body: HTMLElement = document.body;
 
 onMounted(() => {
-  body.style.overflowX = "hidden";
+  body.style.overflowY = "hidden";
   const headerText = new SplitType(".name", { types: "words,chars" });
   const animText = new SplitType(".typed-text", { types: "words,chars" });
 
@@ -126,7 +126,7 @@ onMounted(() => {
       "--divider-width": "100%",
       duration: 0.8,
       onComplete: () => {
-        body.style.overflow = "scroll down";
+        body.style.overflowY = "scroll";
       },
     });
 

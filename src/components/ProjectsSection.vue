@@ -50,7 +50,7 @@ onMounted(() => {
         ease: "elastic.out(1, 0.75)",
         stagger: 0.3,
       }),
-    start: "top 75%",
+    // start: "80% 80%",
   });
 });
 

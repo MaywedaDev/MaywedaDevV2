@@ -33,7 +33,7 @@
           Ipsam!
         </p>
         <button
-          class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl opacity-0 my-4"
+          class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl opacity-0 my-4 hover:bg-red"
           ref="contactButton"
         >
           LET'S TALK

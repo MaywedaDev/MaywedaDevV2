@@ -13,7 +13,7 @@
     </div>
 
     <button
-      class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl mx-auto"
+      class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl mx-auto hover:bg-red hover:text-white hover:shadow-lg transition-all duration-300"
     >
       SHOW MORE
     </button>

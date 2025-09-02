@@ -18,7 +18,7 @@
   </nav>
   <div class="w-full max-w-[1280px] px-10 my-10 mx-auto space-y-10">
     <div
-      class="w-full flex overflow-hidden my-8 justify-between h-[550px] pt-10"
+      class="w-full flex overflow-hidden my-8 justify-between h-[350px] pt-10"
     >
       <div class="p-4 max-w-[500px]">
         <h6 class="text-secondary name tEllen text-4xl leading-[60px]">

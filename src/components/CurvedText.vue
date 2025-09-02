@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[250px] h-[250px]">
+  <div class="w-[300px] h-[300px]">
     <svg
       ref="curvedText"
       width="354"

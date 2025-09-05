@@ -54,20 +54,7 @@
         </template>
       </section-wrapper>
 
-      <section-wrapper title="Experience">
-        <template #content>
-          <div class="max-w-[600px] space-y-14">
-            <ExpItem
-              company-name="Company Name"
-              job-title="Fullstack Developer"
-              duration="2024 - Present"
-              :description="desc"
-              v-for="(item, i) in 7"
-              :key="i"
-            />
-          </div>
-        </template>
-      </section-wrapper>
+      <gallery-section />
 
       <marquee-name />
 
@@ -89,8 +76,7 @@ import Footer from "../components/Footer.vue";
 import ProjectsSection from "../components/ProjectsSection.vue";
 import ExpItem from "../components/ExpItem.vue";
 import MarqueeName from "../components/MarqueeName.vue";
+import GallerySection from "../components/GallerySection.vue";
 
 const aboutSub = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut tortor. Urna interdum lobortis in adipiscing. Facilisi nisl sollicitudin id elementum morbi mi.`;
-
-const desc = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare`;
 </script>

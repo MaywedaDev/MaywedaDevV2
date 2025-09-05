@@ -187,7 +187,6 @@ const createTimeline = () => {
         start: "top 50%",
         end: "bottom 50%",
         scrub: true,
-        markers: true,
       },
     },
     "<"

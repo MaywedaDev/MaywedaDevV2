@@ -184,9 +184,10 @@ const createTimeline = () => {
       ease: "Power1.easeInOut",
       scrollTrigger: {
         trigger: pixelCont.value,
-        start: "top 75%",
-        end: "bottom 100%",
+        start: "top 50%",
+        end: "bottom 50%",
         scrub: true,
+        markers: true,
       },
     },
     "<"

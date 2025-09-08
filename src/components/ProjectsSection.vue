@@ -13,7 +13,7 @@
     </div>
 
     <button
-      class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl mx-auto hover:bg-red hover:text-white hover:shadow-lg transition-all duration-300"
+      class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl mx-auto hover:bg-red hover:text-white hover:shadow-lg transition-all duration-300 shine-btn"
     >
       SHOW MORE
     </button>
@@ -85,11 +85,14 @@ const createTimeline = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .header .word {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .typed-2-text .word {
   margin-right: 2px;
+}
+.shine-btn {
+  box-shadow: 1px 1px 4px 20px #e11717;
 }
 </style>

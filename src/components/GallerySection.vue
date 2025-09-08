@@ -5,7 +5,7 @@
   >
     <div ref="titleText" class="w-full max-w-[500px">
       <h2 class="text-red text-[64px] tBebas">Experience</h2>
-      <div class="w-full max-w-[350px] h-[270px] rounded-lg bg-grey-100"></div>
+      <div class="w-full max-w-[640px] h-[500px] rounded-lg bg-grey-100"></div>
     </div>
     <div class="max-w-[600px] space-y-14">
       <ExpItem
@@ -38,8 +38,8 @@ onMounted(() => {
   ScrollTrigger.create({
     trigger: gallery.value,
     start: "top top",
-    end: "bottom 70%",
-    markers: true,
+    end: "bottom 80%",
+    // markers: true,
     pin: titleText.value,
     scrub: true,
   });

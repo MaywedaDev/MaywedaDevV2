@@ -50,7 +50,7 @@ onMounted(() => {
         ease: "elastic.out(1, 0.75)",
         stagger: 0.3,
       }),
-    // start: "80% 80%",
+    start: "top bottom",
   });
 });
 
@@ -93,6 +93,9 @@ const createTimeline = () => {
   margin-right: 2px;
 }
 .shine-btn {
-  box-shadow: 1px 1px 4px 20px #e11717;
+  transition: all 0.5s;
+}
+.shine-btn:hover {
+  box-shadow: 1px 1px 16px 12px #e1171777;
 }
 </style>

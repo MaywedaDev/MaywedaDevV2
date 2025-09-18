@@ -28,9 +28,10 @@
           Enyo Onuche
         </h1>
         <p class="font-weight-light mb-2 w-[400px] typed-text flex flex-wrap">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eaque.
-          Odit non sed unde? Aliquid doloremque possimus praesentium fugit.
-          Ipsam!
+          I don’t just write code — I craft digital experiences. With 6 years in
+          full-stack development, I bring ideas to life through sleek React and
+          Vue interfaces, powerful Node.js backends, and mobile apps that feel
+          effortless. Let’s build something users will love.
         </p>
         <button
           class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl opacity-0 my-4 hover:bg-red"

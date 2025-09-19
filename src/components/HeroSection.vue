@@ -18,7 +18,7 @@
   </nav>
   <div class="w-full max-w-[1280px] px-10 my-10 mx-auto space-y-10">
     <div
-      class="w-full flex overflow-hidden my-8 justify-between h-[350px] pt-10"
+      class="w-full flex overflow-hidden my-8 justify-between min-h-[450px] pt-10"
     >
       <div class="p-4 max-w-[500px]">
         <h6 class="text-secondary name tEllen text-4xl leading-[60px]">
@@ -34,7 +34,7 @@
           effortless. Let’s build something users will love.
         </p>
         <button
-          class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl opacity-0 my-4 hover:bg-red"
+          class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl opacity-0 my-4 shine-btn hover:bg-red"
           ref="contactButton"
         >
           LET'S TALK
@@ -96,6 +96,11 @@ onMounted(() => {
     appendPixel();
   }
 
+  gsap.set(".typed-text .char", {
+    yPercent: 100,
+    opacity: 0,
+  });
+
   t1.from(".name .char", {
     yPercent: 130,
     opacity: 0,
@@ -129,8 +134,12 @@ onMounted(() => {
       onComplete: () => {
         body.style.overflowY = "scroll";
       },
+    })
+    .to(".typed-text .char", {
+      yPercent: 0,
+      opacity: 1,
+      duration: 0.5,
     });
-
   createTimeline();
 
   // gsap.to(".typed-text .char", {
@@ -153,17 +162,17 @@ const createTimeline = () => {
   const t2 = gsap.timeline();
   const typedChars = gsap.utils.toArray(".typed-text .char");
 
-  const createTween = (el: any) => {
-    return gsap.from(el, {
-      duration: 0.05,
-      // width: "100%",
-      display: "none",
-    });
-  };
+  // const createTween = (el: any) => {
+  //   return gsap.from(el, {
+  //     duration: 0.05,
+  //     // width: "100%",
+  //     display: "none",
+  //   });
+  // };
 
-  typedChars.forEach((el) => {
-    t2.add(createTween(el));
-  });
+  // typedChars.forEach((el) => {
+  //   t2.add(createTween(el));
+  // });
 
   if (!contactButton.value) return t2;
   t2.to(contactButton.value, {
@@ -221,35 +230,29 @@ nav::after {
   }
 }
 
-.typed-text {
-  /* overflow: hidden; */
-  width: fit-content;
-
-  position: relative;
-}
-
-.typed-text::after {
+/* .typed-text::after {
   content: "";
   position: relative;
   width: 2px;
   background-color: white;
   height: 20px;
-  /* top: 4px; */
+  top: 4px; 
   display: inline-block;
-  /* right: 0;
-  bottom: 0; */
+  right: 0;
+  bottom: 0; 
   animation: blink 1s step-start infinite;
-}
+} */
 
-.typed-text .word {
-  display: flex !important;
-}
+/* .typed-text .word {
+  margin-right: 2px;
+} */
 
 .typed-text .word {
   margin-right: 2px;
 }
 
 .name .word,
+.typed-text .word,
 .anim-text .line {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -263,5 +266,12 @@ nav::after {
 .pixel-container .pixel {
   position: relative;
   background-color: #0a0a0a;
+}
+
+.shine-btn {
+  transition: all 0.5s;
+}
+.shine-btn:hover {
+  box-shadow: 1px 1px 16px 12px #e1171777;
 }
 </style>

@@ -10,7 +10,7 @@
     <div
       class="w-100 my-10 grid grid-cols-[repeat(2,_minmax(360px,_600px))] mx-auto gap-8"
     >
-      <project-card v-for="(item, i) in 6" :key="i" />
+      <project-card :project="item" v-for="(item, i) in projects" :key="i" />
     </div>
 
     <button
@@ -27,6 +27,40 @@ import ProjectCard from "./ProjectCard.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+
+const projects = [
+  {
+    name: "QuizWiz",
+    image: "src/assets/images/projects/quizwiz_proj.png",
+    link: "https://quiz_wiz.vercel.app",
+    desc: "A simple quiz application",
+  },
+  {
+    name: "",
+    image: "",
+    link: "",
+  },
+  {
+    name: "",
+    image: "",
+    link: "",
+  },
+  {
+    name: "",
+    image: "",
+    link: "",
+  },
+  {
+    name: "",
+    image: "",
+    link: "",
+  },
+  {
+    name: "",
+    image: "",
+    link: "",
+  },
+];
 
 gsap.registerPlugin(ScrollTrigger);
 

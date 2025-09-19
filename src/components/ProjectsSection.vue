@@ -1,9 +1,10 @@
 <template>
   <div class="w-100 py-10 px-[112px] flex flex-col projects">
     <h2 class="text-red text-[64px] tBebas header">Selected Works</h2>
-    <p class="max-w-[420px] typed-2-text flex flex-wrap">
-      Lorem ipsum dolor sit amet consectetur. Risus tortor dignissim viverra
-      vulputate. Aliquet est dignissim malesuada sed vestibulum quisque.
+    <p class="max-w-[520px] flex flex-wrap">
+      Passionate about turning complex ideas into simple, beautiful solutions.
+      <br />
+      Take a look through some of my featured projects
     </p>
 
     <div
@@ -36,7 +37,7 @@ onMounted(() => {
   createTimeline();
 
   gsap.set(".project-card", {
-    yPercent: 130,
+    yPercent: 40,
     opacity: 0,
   });
 

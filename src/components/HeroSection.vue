@@ -18,16 +18,18 @@
   </nav>
   <div class="w-full max-w-[1280px] px-10 my-10 mx-auto space-y-10">
     <div
-      class="w-full flex overflow-hidden my-8 justify-between min-h-[450px] pt-10"
+      class="w-full flex max-[960px]:flex-col overflow-hidden my-8 justify-between min-h-[450px] pt-10"
     >
-      <div class="p-4 max-w-[500px]">
+      <div class="p-4 min-w-[960px]:max-w-[500px] w-full">
         <h6 class="text-secondary name tEllen text-4xl leading-[60px]">
           Hi I'm
         </h6>
         <h1 class="tBebas text-white font-weight-bold text-[96px] name">
           Enyo Onuche
         </h1>
-        <p class="font-weight-light mb-2 w-[400px] typed-text flex flex-wrap">
+        <p
+          class="font-weight-light mb-2 max-w-[640px] min-[960px]:max-w-[400px] typed-text flex flex-wrap"
+        >
           I don’t just write code — I craft digital experiences. With 6 years in
           full-stack development, I bring ideas to life through sleek React and
           Vue interfaces, powerful Node.js backends, and mobile apps that feel
@@ -41,7 +43,9 @@
         </button>
       </div>
 
-      <CurvedText />
+      <div class="max-[960px]:mx-auto">
+        <CurvedText />
+      </div>
 
       <!-- <div class="mx-auto my-auto w-[600px] relative z-10 ">
             <h6 class="text-secondary ml-10 name tEllen text-3xl">Hi I'm</h6>
@@ -53,7 +57,7 @@
         </div> -->
     </div>
     <div
-      class="w-[1024px] h-[640px] rounded-lg mx-auto bg-grey-100 overflow-hidden relative pixel-container"
+      class="w-full max-w-[1024px] rounded-lg mx-auto bg-grey-100 overflow-hidden relative pixel-container"
       ref="pixelCont"
     >
       <img
@@ -261,6 +265,7 @@ nav::after {
   display: grid;
   grid-template-columns: repeat(64, 1fr);
   grid-template-rows: repeat(40, 1fr);
+  aspect-ratio: 16 / 9;
 }
 
 .pixel-container .pixel {

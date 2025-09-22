@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-100 max-w-[600px] p-5 bg-cardBg rounded-lg flex flex-col gap-y-4 project-card"
+    class="w-100 max-w-[600px] p-5 bg-cardBg rounded-lg flex flex-col gap-y-4 project-card cursor-pointer"
   >
     <div class="w-100 rounded-md bg-contentBg h-[395px]">
       <img
@@ -19,7 +19,9 @@
           project?.desc || "Lorem ipsum dolor sit amet consectetur."
         }}</span>
       </div>
-      <a class="text-red uppercase underline" :href="project?.link || ''"
+      <a
+        class="text-red hover:text-[#ff4949] uppercase underline"
+        :href="project?.link || ''"
         >Open project</a
       >
     </div>

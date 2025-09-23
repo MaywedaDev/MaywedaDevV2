@@ -265,7 +265,7 @@ nav::after {
   display: grid;
   grid-template-columns: repeat(64, 1fr);
   grid-template-rows: repeat(40, 1fr);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
 }
 
 .pixel-container .pixel {
@@ -278,5 +278,10 @@ nav::after {
 }
 .shine-btn:hover {
   box-shadow: 1px 1px 16px 12px #e1171777;
+}
+
+@media screen and (max-width: 640px) {
+  .pixel-container {
+  }
 }
 </style>

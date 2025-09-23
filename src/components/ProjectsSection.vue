@@ -8,7 +8,7 @@
     </p>
 
     <div
-      class="w-100 my-10 grid grid-cols-[repeat(2,_minmax(360px,_600px))] mx-auto gap-8"
+      class="w-100 my-10 grid lg:grid-cols-[repeat(2,_minmax(360px,_600px))] mx-auto gap-8"
     >
       <project-card :project="item" v-for="(item, i) in projects" :key="i" />
     </div>

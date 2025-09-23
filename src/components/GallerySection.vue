@@ -1,13 +1,15 @@
 <template>
   <div
     ref="gallery"
-    class="px-[112px] py-12 border-t border-[#484848] w-full flex gap-10 justify-between"
+    class="px-[112px] py-12 border-t border-[#484848] w-full flex justify-between"
   >
-    <div ref="titleText" class="w-full max-w-[500px">
+    <div ref="titleText" class="w-full max-w-[640px]">
       <h2 class="text-red text-[64px] tBebas">Experience</h2>
-      <div class="w-full max-w-[640px] h-[500px] rounded-lg bg-grey-100"></div>
+      <div
+        class="w-full max-w-[640px] rounded-lg bg-grey-100 slider-cont"
+      ></div>
     </div>
-    <div class="max-w-[600px] space-y-14">
+    <div class="xl:max-w-[600px] max-w-[380px] space-y-14 pl-12">
       <ExpItem
         company-name="Company Name"
         job-title="Fullstack Developer"
@@ -47,3 +49,9 @@ onMounted(() => {
 
 const desc = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare`;
 </script>
+
+<style>
+.slider-cont {
+  aspect-ratio: 16 / 12;
+}
+</style>

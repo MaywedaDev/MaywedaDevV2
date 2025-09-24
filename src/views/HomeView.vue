@@ -19,10 +19,10 @@
             sollicitudin id elementum morbi mi.
           </p>
           <p class="mt-10">
-            Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor
-            a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut
-            tortor. Urna interdum lobortis in adipiscing. Facilisi nisl
-            sollicitudin id elementum morbi mi.
+            or sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed
+            sodales donec. Sit lacus turpis id ornare aliquam ut tortor. Urna
+            interdum lobortis in adipiscing. Facilisi nisl sollicitudin id
+            elementum morbi mi.
           </p>
         </template>
         <template #content>

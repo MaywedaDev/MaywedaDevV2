@@ -1,7 +1,7 @@
 <template>
   <div
     ref="gallery"
-    class="px-[112px] py-12 border-t border-[#484848] w-full flex justify-between"
+    class="px-[112px] py-12 border-t border-[#484848] w-full lg:flex justify-between"
   >
     <div ref="titleText" class="w-full max-w-[640px]">
       <h2 class="text-red text-[64px] tBebas">Experience</h2>

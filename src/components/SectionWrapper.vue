@@ -1,7 +1,7 @@
 <template>
   <div
-    class="px-[112px] py-12 border-t border-[#484848] w-full flex gap-10 justify-between"
-    :class="{ 'flex-row-reverse': ltr }"
+    class="px-[112px] py-12 border-t border-[#484848] w-full flex flex-col min-[960px]:flex-row gap-10 justify-between"
+    :class="{ 'min-[960px]:flex-row-reverse': ltr }"
   >
     <div class="w-full max-w-[500px]">
       <h2 class="text-red text-[64px] tBebas">{{ title }}</h2>

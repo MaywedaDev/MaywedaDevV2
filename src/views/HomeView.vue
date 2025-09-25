@@ -59,7 +59,7 @@
       <marquee-name />
 
       <div
-        class="w-full max-w-[1200px] h-[500px] rounded-lg bg-grey-100 mx-auto my-10"
+        class="w-full max-w-[1000px] h-[500px] rounded-lg bg-grey-100 lg:mx-auto m-10"
       ></div>
 
       <marquee-name />

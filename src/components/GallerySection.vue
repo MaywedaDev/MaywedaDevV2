@@ -1,9 +1,12 @@
 <template>
   <div
     ref="gallery"
-    class="lg:px-[112px] py-12 border-t border-[#484848] w-full lg:flex justify-between overflow-hidden"
+    class="lg:px-[112px] py-12 border-t border-[#484848] w-full flex flex-col lg:flex-row justify-between overflow-hidden"
   >
-    <div ref="titleText" class="w-full ml-6 md:ml-16 lg:mx-0 lg:max-w-[640px]">
+    <div
+      ref="titleText"
+      class="w-[calc(100%-32px)] ml-4 md:ml-16 lg:mx-0 lg:max-w-[640px]"
+    >
       <h2 class="text-red text-[64px] tBebas">Experience</h2>
       <div
         class="w-full max-w-[450px] mx-auto lg:max-w-[640px] rounded-lg bg-grey-100 slider-cont"
@@ -54,7 +57,7 @@ onMounted(() => {
           start: "left left",
           end: () => `+=${expCont.value?.offsetWidth} bottom`,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
   });

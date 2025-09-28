@@ -16,11 +16,11 @@
       </div>
     </div>
   </nav>
-  <div class="w-full max-w-[1280px] px-10 my-10 mx-auto space-y-10">
+  <div class="w-full max-w-[1280px] px-4 md:px-10 my-10 mx-auto space-y-10">
     <div
       class="w-full flex max-[960px]:flex-col overflow-hidden my-8 justify-between min-h-[450px] pt-10"
     >
-      <div class="p-4 min-w-[960px]:max-w-[500px] w-full">
+      <div class="min-w-[960px]:max-w-[500px] w-full">
         <h6 class="text-secondary name tEllen text-4xl leading-[60px]">
           Hi I'm
         </h6>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="px-[112px] py-12 border-t border-[#484848] w-full flex flex-col min-[960px]:flex-row gap-10 justify-between"
+    class="px-4 md:px-10 lg:px-[112px] py-12 border-t border-[#484848] w-full flex flex-col min-[960px]:flex-row gap-10 justify-between"
     :class="{ 'min-[960px]:flex-row-reverse': ltr }"
   >
     <div class="w-full max-w-[500px]">
@@ -14,11 +14,6 @@
 <!--  -->
 
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import gsap from "gsap";
-
 const props = defineProps({
   title: {
     type: String,

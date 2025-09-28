@@ -59,7 +59,7 @@
       <marquee-name />
 
       <div
-        class="w-full max-w-[1000px] h-[500px] rounded-lg bg-grey-100 lg:mx-auto m-10"
+        class="w-[calc(100%-32px)] lg:w-full max-w-[1000px] rounded-lg bg-grey-100 lg:mx-auto my-10 mx-4 last-box"
       ></div>
 
       <marquee-name />
@@ -80,3 +80,9 @@ import GallerySection from "../components/GallerySection.vue";
 
 const aboutSub = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut tortor. Urna interdum lobortis in adipiscing. Facilisi nisl sollicitudin id elementum morbi mi.`;
 </script>
+
+<style>
+.last-box {
+  aspect-ratio: 2 / 1;
+}
+</style>

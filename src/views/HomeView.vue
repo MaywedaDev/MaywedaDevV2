@@ -70,11 +70,11 @@
 
 <script lang="ts" setup>
 import HeroSection from "../components/HeroSection.vue";
-import MarqueeScroll from "../components/MarqueeScroll.vue";
+
 import SectionWrapper from "../components/SectionWrapper.vue";
 import Footer from "../components/Footer.vue";
 import ProjectsSection from "../components/ProjectsSection.vue";
-import ExpItem from "../components/ExpItem.vue";
+
 import MarqueeName from "../components/MarqueeName.vue";
 import GallerySection from "../components/GallerySection.vue";
 

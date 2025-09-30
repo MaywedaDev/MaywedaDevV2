@@ -73,15 +73,6 @@ onMounted(() => {
         scrub: true,
       });
   });
-  // if (!titleText.value || !gallery.value) return;
-  // ScrollTrigger.create({
-  //   trigger: gallery.value,
-  //   start: "top top",
-  //   end: "bottom 80%",
-  //   // markers: true,
-  //   pin: titleText.value,
-  //   scrub: true,
-  // });
 });
 
 const desc = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare`;

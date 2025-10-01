@@ -77,8 +77,6 @@ import ProjectsSection from "../components/ProjectsSection.vue";
 
 import MarqueeName from "../components/MarqueeName.vue";
 import GallerySection from "../components/GallerySection.vue";
-
-const aboutSub = `Lorem ipsum dolor sit amet consectetur. Eu laoreet sit vitae auctor a sociis sed sodales donec. Sit lacus turpis id ornare aliquam ut tortor. Urna interdum lobortis in adipiscing. Facilisi nisl sollicitudin id elementum morbi mi.`;
 </script>
 
 <style>

@@ -186,25 +186,20 @@ const createTimeline = () => {
   });
 
   if (!pixelCont.value) return t2;
-  t2.to(
-    ".pixel",
-    {
-      // duration: 0.3,
-      opacity: 0,
-      stagger: {
-        each: 0.02,
-        from: "random",
-      },
-      ease: "Power1.easeInOut",
-      scrollTrigger: {
-        trigger: pixelCont.value,
-        start: "top 50%",
-        end: "bottom 50%",
-        scrub: true,
-      },
+  t2.to(".pixel", {
+    // duration: 1.5,
+    opacity: 0,
+    stagger: {
+      each: 0.02,
+      from: "random",
     },
-    "<"
-  );
+    ease: "Power1.easeInOut",
+    scrollTrigger: {
+      trigger: pixelCont.value,
+      start: "top 50%",
+      // scrub: true,
+    },
+  });
 
   return t2;
 };

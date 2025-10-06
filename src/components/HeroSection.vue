@@ -143,8 +143,27 @@ onMounted(() => {
       yPercent: 0,
       opacity: 1,
       duration: 0.5,
+    })
+    .to(contactButton?.value, {
+      duration: 0.7,
+      opacity: "100%",
+      ease: "Power1.easeInOut",
     });
-  createTimeline();
+
+  gsap.to(".pixel", {
+    // duration: 1.5,
+    opacity: 0,
+    stagger: {
+      from: "random",
+      amount: 1.8,
+    },
+    ease: "Power1.easeInOut",
+    scrollTrigger: {
+      trigger: pixelCont.value,
+      start: "top 50%",
+      // scrub: true,
+    },
+  });
 
   // gsap.to(".typed-text .char", {
   //   duration: 2.5,
@@ -161,48 +180,6 @@ onMounted(() => {
   //   },
   // });
 });
-
-const createTimeline = () => {
-  const t2 = gsap.timeline();
-  const typedChars = gsap.utils.toArray(".typed-text .char");
-
-  // const createTween = (el: any) => {
-  //   return gsap.from(el, {
-  //     duration: 0.05,
-  //     // width: "100%",
-  //     display: "none",
-  //   });
-  // };
-
-  // typedChars.forEach((el) => {
-  //   t2.add(createTween(el));
-  // });
-
-  if (!contactButton.value) return t2;
-  t2.to(contactButton.value, {
-    duration: 0.7,
-    opacity: "100%",
-    ease: "Power1.easeInOut",
-  });
-
-  if (!pixelCont.value) return t2;
-  t2.to(".pixel", {
-    // duration: 1.5,
-    opacity: 0,
-    stagger: {
-      each: 0.02,
-      from: "random",
-    },
-    ease: "Power1.easeInOut",
-    scrollTrigger: {
-      trigger: pixelCont.value,
-      start: "top 50%",
-      // scrub: true,
-    },
-  });
-
-  return t2;
-};
 
 const appendPixel = () => {
   const pixel = document.createElement("div");

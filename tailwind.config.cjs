@@ -13,6 +13,7 @@ module.exports = {
         red: "#E11717",
         cardBg: "#1A1A1A",
         contentBg: "#464646",
+        borderRed: "#E117173d",
       },
       fontFamily: {
         clash: ["Clash", "sans-serif"],

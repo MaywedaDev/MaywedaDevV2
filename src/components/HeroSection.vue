@@ -144,7 +144,7 @@ onMounted(() => {
       opacity: 1,
       duration: 0.5,
     })
-    .to(contactButton?.value, {
+    .to(contactButton?.value as HTMLButtonElement, {
       duration: 0.7,
       opacity: "100%",
       ease: "Power1.easeInOut",

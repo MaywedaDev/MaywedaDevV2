@@ -38,7 +38,7 @@
         :alt="icon.alt"
       />
     </div>
-    <div class="flex mb-2">
+    <!-- <div class="flex mb-2">
       <div class="flex space-x-1 w-full">
         <icon
           icon="iwwa:year"
@@ -53,7 +53,7 @@
         />
         <span class="text-lg">In Progress</span>
       </div>
-    </div>
+    </div> -->
     <div class="flex gap-3 justify-end">
       <a :href="project?.link || '#'" target="_blank" class="">
         <CustomIcon
@@ -73,7 +73,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { Icon } from "@iconify/vue";
 import CustomIcon from "./CustomIcon.vue";
 
 type Project = {

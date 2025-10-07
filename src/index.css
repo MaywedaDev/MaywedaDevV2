@@ -60,3 +60,12 @@ body {
   transform: translate(-50%, -50%);
   transition: transform 0.5s ease-out;
 }
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}

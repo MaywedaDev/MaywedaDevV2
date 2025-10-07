@@ -1,14 +1,17 @@
 <template>
-  <div class="min-h-screen bg-body overflow-hidden text-white">
-    <router-view />
-    <div class="custom-cursor">
-      <div ref="cursorDot" class="cursor-dot"></div>
-      <div ref="cursorOutline" class="cursor-outline"></div>
+  <LenisWrapper>
+    <div class="min-h-screen bg-body overflow-hidden text-white">
+      <router-view />
+      <div class="custom-cursor">
+        <div ref="cursorDot" class="cursor-dot"></div>
+        <div ref="cursorOutline" class="cursor-outline"></div>
+      </div>
     </div>
-  </div>
+  </LenisWrapper>
 </template>
 
 <script setup lang="ts">
+import LenisWrapper from "./components/LenisWrapper.vue";
 import { onMounted, ref } from "vue";
 import gsap from "gsap";
 

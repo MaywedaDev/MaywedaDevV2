@@ -18,9 +18,9 @@
   </nav>
   <div class="w-full max-w-[1280px] px-4 md:px-10 my-10 mx-auto space-y-10">
     <div
-      class="w-full flex max-[960px]:flex-col overflow-hidden my-8 justify-between min-h-[450px] pt-10"
+      class="w-full flex max-[960px]:flex-col overflow-hidden justify-between min-h-[650px]"
     >
-      <div class="min-w-[960px]:max-w-[500px] w-full">
+      <!-- <div class="min-w-[960px]:max-w-[500px] w-full">
         <h6 class="text-secondary name tEllen text-4xl leading-[60px]">
           Hi I'm
         </h6>
@@ -45,19 +45,23 @@
 
       <div class="max-[960px]:mx-auto">
         <CurvedText />
-      </div>
+      </div> -->
 
-      <!-- <div class="mx-auto my-auto w-[600px] relative z-10 ">
-            <h6 class="text-secondary ml-10 name tEllen text-3xl">Hi I'm</h6>
-            <h1 class="text-secondary font-clash text-center text-7xl font-700 md:text-9xl uppercase font-bold inline-block name">Onuche Enyo</h1>
-            <floating-bubble position="top-5 -left-10"></floating-bubble>
-            <floating-bubble position="-bottom-7 -left-10"></floating-bubble>
-            <floating-bubble position="bottom-24 -right-5"></floating-bubble>
-            <floating-bubble position="bottom-0 -right-24"></floating-bubble>
-        </div> -->
+      <div class="mx-auto my-auto w-[600px] relative z-10">
+        <h6 class="text-secondary ml-10 name tEllen text-3xl">Hi I'm</h6>
+        <h1
+          class="text-secondary font-clash text-center text-9xl font-700 md:text-9xl uppercase font-bold inline-block name"
+        >
+          Onuche Enyo
+        </h1>
+        <floating-bubble position="top-5 -left-10"></floating-bubble>
+        <floating-bubble position="-bottom-7 -left-10"></floating-bubble>
+        <floating-bubble position="bottom-24 -right-5"></floating-bubble>
+        <floating-bubble position="bottom-0 -right-24"></floating-bubble>
+      </div>
     </div>
     <div
-      class="w-full max-w-[1024px] rounded-lg mx-auto bg-grey-100 overflow-hidden relative pixel-container"
+      class="w-full max-w-[1024px] rounded-lg mx-auto bg-grey-100 overflow-hidden relative pixel-container my-16"
       ref="pixelCont"
     >
       <img
@@ -72,7 +76,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-// import FloatingBubble from "./FloatingBubble.vue";
+import FloatingBubble from "./FloatingBubble.vue";
 // import MarqueeName from "./MarqueeName.vue";
 // import SectionWrapper from "./SectionWrapper.vue";
 // import ProjectCard from "./ProjectCard.vue";
@@ -92,7 +96,7 @@ gsap.registerPlugin(ScrollTrigger);
 const body: HTMLElement = document.body;
 
 onMounted(() => {
-  body.style.overflowY = "hidden";
+  // body.style.overflowY = "hidden";
   const headerText = new SplitType(".name", { types: "words,chars" });
   const animText = new SplitType(".typed-text", { types: "words,chars" });
 
@@ -111,13 +115,17 @@ onMounted(() => {
     stagger: 0.08,
     ease: "back.out",
   })
-    // .from(".bubble", {
-    //   y: 60,
-    //   // x: 30,
-    //   opacity: 0,
-    //   duration: 0.6,
-    //   ease: "back.out",
-    // })
+    .from(".bubble", {
+      y: 60,
+      // x: 30,
+      opacity: 0,
+      duration: 0.6,
+      ease: "back.out",
+      onComplete: () => {
+        startFloating();
+      },
+      stagger: 0.2,
+    })
     // .from(
     //   "#marquee",
     //   {
@@ -179,6 +187,21 @@ onMounted(() => {
   //     end: "top 80%",
   //   },
   // });
+
+  const startFloating = () => {
+    const floatingBubbles = gsap.utils.toArray(".bubble");
+    floatingBubbles.forEach((bubble) => {
+      gsap.to(bubble as GSAPTweenTarget, {
+        yPercent: -20 + Math.round(Math.random() * 40),
+        xPercent: -20 + Math.round(Math.random() * 40),
+        duration: 3 + Math.round(Math.random() * 2),
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: Math.random() * 2,
+      });
+    });
+  };
 });
 
 const appendPixel = () => {

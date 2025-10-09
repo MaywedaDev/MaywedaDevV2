@@ -18,9 +18,9 @@ import gsap from "gsap";
 const cursorDot = ref<HTMLDivElement>();
 const cursorOutline = ref<HTMLDivElement>();
 
-onMounted(() => {
-  window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
 
+onMounted(() => {
   document.addEventListener("mousemove", (e) => {
     if (cursorDot.value && cursorOutline.value) {
       cursorDot.value.style.left = e.clientX + "px";

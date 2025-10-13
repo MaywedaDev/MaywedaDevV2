@@ -4,7 +4,17 @@
     :class="{ 'min-[960px]:flex-row-reverse': ltr }"
   >
     <div class="w-full max-w-[500px]">
-      <h2 class="text-red text-[64px] tBebas">{{ title }}</h2>
+      <DecryptedText
+        :text="title"
+        :speed="100"
+        :max-iterations="20"
+        :sequential="false"
+        reveal-direction="start"
+        :use-original-chars-only="false"
+        class-name="text-red text-[64px] tBebas"
+        encrypted-class-name="text-[64px] tBebas header"
+        animate-on="view"
+      />
       <slot name="sub"></slot>
     </div>
     <slot name="content"></slot>
@@ -14,6 +24,7 @@
 <!--  -->
 
 <script lang="ts" setup>
+import DecryptedText from "./DecryptedText.vue";
 const props = defineProps({
   title: {
     type: String,

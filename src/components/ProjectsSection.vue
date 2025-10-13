@@ -1,6 +1,16 @@
 <template>
   <div class="w-100 py-10 px-4 md:px-10 lg:px-[112px] flex flex-col projects">
-    <h2 class="text-red text-[64px] tBebas header">Selected Works</h2>
+    <DecryptedText
+      text="Selected Works"
+      :speed="100"
+      :max-iterations="20"
+      :sequential="false"
+      reveal-direction="start"
+      :use-original-chars-only="false"
+      class-name="text-red text-[64px] tBebas"
+      encrypted-class-name="text-[64px] tBebas header"
+      animate-on="view"
+    />
     <p class="max-w-[520px] flex flex-wrap">
       Passionate about turning complex ideas into simple, beautiful solutions.
       <br />
@@ -27,6 +37,7 @@ import ProjectCard from "./ProjectCard.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+import DecryptedText from "./DecryptedText.vue";
 
 const projects = [
   {

@@ -113,7 +113,8 @@ onMounted(() => {
     yPercent: 130,
     opacity: 0,
     stagger: 0.08,
-    ease: "back.out",
+    ease: "elastic.out(1, 0.5)",
+    duration: 1.5,
   })
     .from(".bubble", {
       y: 60,
@@ -250,11 +251,11 @@ nav::after {
   margin-right: 2px;
 }
 
-.name .word,
+/* .name .word,
 .typed-text .word,
 .anim-text .line {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
+} */
 
 .pixel-container {
   display: grid;

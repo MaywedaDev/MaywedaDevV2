@@ -1,19 +1,55 @@
 <template>
   <div
-    class="absolute w-[72px] h-[72px] bg-gradient-to-r from-grad-white to-red rounded-3xl -z-10 rotate-[-22deg] bubble"
+    class="absolute w-[72px] h-[72px] rotate-[-22deg] bubble z-20"
     :class="position"
-  ></div>
+  >
+    <icon
+      :icon="selectedSocial?.icon || 'simple-icons:gmail'"
+      class="w-full h-full text-red opacity-80 hover:opacity-100 transition-opacity duration-500"
+    />
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { Icon } from "@iconify/vue";
+import { ref } from "vue";
 
-export default defineComponent({
-  props: {
-    position: {
-      type: String,
-      required: true,
-    },
+const props = defineProps({
+  position: {
+    type: String,
+    required: true,
+  },
+  smMediaName: {
+    type: Object as () => "Gmail" | "LinkedIn" | "GitHub" | "Twitter",
+    required: false,
+    default: "Gmail",
   },
 });
+
+const socialMedia = [
+  {
+    name: "Gmail",
+    icon: "simple-icons:gmail",
+    link: "mailto:enyoonuche1@gmail.com",
+  },
+  {
+    name: "LinkedIn",
+    icon: "ri:linkedin-box-fill",
+    link: "https://linkedin.com/in/mayweda/",
+  },
+  {
+    name: "GitHub",
+    icon: "ri:github-fill",
+    link: "https://github.com/MaywedaDev",
+  },
+  {
+    name: "Twitter",
+    icon: "ri:twitter-fill",
+    link: "https://twitter.com/MaywedaDev",
+  },
+];
+
+const selectedSocial = socialMedia.find(
+  (sm) => sm.name.toLowerCase() === props.smMediaName.toLowerCase()
+);
 </script>

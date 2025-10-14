@@ -54,10 +54,22 @@
         >
           Onuche Enyo
         </h1>
-        <floating-bubble position="top-5 -left-10"></floating-bubble>
-        <floating-bubble position="-bottom-7 -left-10"></floating-bubble>
-        <floating-bubble position="bottom-24 -right-5"></floating-bubble>
-        <floating-bubble position="bottom-0 -right-24"></floating-bubble>
+        <floating-bubble
+          sm-media-name="GitHub"
+          position="top-5 -left-10"
+        ></floating-bubble>
+        <floating-bubble
+          sm-media-name="LinkedIn"
+          position="-bottom-7 -left-10"
+        ></floating-bubble>
+        <floating-bubble
+          sm-media-name="Twitter"
+          position="bottom-24 -right-5"
+        ></floating-bubble>
+        <floating-bubble
+          sm-media-name="Gmail"
+          position="bottom-0 -right-24"
+        ></floating-bubble>
       </div>
     </div>
 

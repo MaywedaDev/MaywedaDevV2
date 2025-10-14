@@ -1,7 +1,7 @@
 <template>
   <div class="w-100 py-10 px-4 md:px-10 lg:px-[112px] flex flex-col projects">
     <DecryptedText
-      text="Selected Works"
+      text="Projects"
       :speed="100"
       :max-iterations="20"
       :sequential="false"

@@ -3,13 +3,31 @@
     class="w-100 max-w-[600px] px-4 py-8 bg-[rgba(225_,23_,23_,0.02)] border border-borderRed rounded-lg flex flex-col project-card cursor-pointer"
   >
     <div class="flex gap-3 text-[12px] mb-2">
-      <div
-        v-for="i in 2"
-        :key="i"
-        class="py-1 px-2 flex border rounded-lg border-borderRed items-center gap-x-2 hover:bg-red duration-500"
-      >
-        <span>Project Type</span>
-      </div>
+      <CustomIcon
+        name="streamline-freehand:worldwide-web-browser"
+        alt="Frontend"
+        className="text-[20px] text-red"
+      />
+      <CustomIcon
+        name="streamline-freehand:server-2"
+        alt="Backend"
+        className="text-[20px] text-red"
+      />
+      <CustomIcon
+        name="iconoir:database-solid"
+        alt="Database"
+        className="text-[20px] text-red"
+      />
+      <CustomIcon
+        name="duo-icons:android"
+        alt="Android"
+        className="text-[20px] text-red"
+      />
+      <CustomIcon
+        name="fa6-brands:apple"
+        alt="iOS"
+        className="text-[20px] text-red"
+      />
     </div>
 
     <div class="space-y-1 mb-4">

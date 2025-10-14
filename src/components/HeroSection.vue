@@ -18,7 +18,7 @@
   </nav>
   <div class="w-full max-w-[1280px] px-4 md:px-10 my-10 mx-auto space-y-10">
     <div
-      class="w-full flex max-[960px]:flex-col overflow-hidden justify-between min-h-[650px]"
+      class="w-full flex max-[960px]:flex-col overflow-hidden justify-between min-h-[65vh]"
     >
       <!-- <div class="min-w-[960px]:max-w-[500px] w-full">
         <h6 class="text-secondary name tEllen text-4xl leading-[60px]">
@@ -60,6 +60,31 @@
         <floating-bubble position="bottom-0 -right-24"></floating-bubble>
       </div>
     </div>
+
+    <div
+      class="w-full flex flex-col gap-[calc(55vh_+40px)] justify-between items-center my-12"
+    >
+      <div>
+        <h2 class="text-5xl text-deepBlack text-center font-bold">
+          Scroll down
+        </h2>
+        <Icon
+          icon="solar:double-alt-arrow-down-line-duotone"
+          class="text-red text-5xl mt-3 animate-bounce mx-auto"
+          @click="scrollToBio"
+        />
+      </div>
+
+      <div ref="bioSection">
+        <ScrollReveal
+          :children="bio"
+          :base-rotation="8"
+          :base-opacity="0.04"
+          :blur-strength="8"
+        />
+      </div>
+    </div>
+
     <div
       class="w-full max-w-[1024px] rounded-lg mx-auto bg-grey-100 overflow-hidden relative pixel-container my-16"
       ref="pixelCont"
@@ -83,17 +108,29 @@ import FloatingBubble from "./FloatingBubble.vue";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollReveal from "./ScrollReveal.vue";
 import CurvedText from "./CurvedText.vue";
+import { Icon } from "@iconify/vue";
 // import TextPlugin from "gsap/TextPlugin";
 
 const navContent = ref<HTMLDivElement>();
 const contactButton = ref<HTMLButtonElement>();
 const pixelCont = ref<HTMLDivElement>();
+const bioSection = ref<HTMLDivElement>();
 const t1 = gsap.timeline();
+
+const bio =
+  "Hi, I'm Enyo, a software dev, with a passion for creating beautiful, functional and interactive digital experiences. With a vast experience in full-stack development, I specialize in creating sleek React and Vue interfaces, mobile apps that feel effortless, and I also do indie game development (mostly for fun). Let's build something users will love.";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const body: HTMLElement = document.body;
+
+const scrollToBio = () => {
+  if (bioSection.value) {
+    bioSection.value.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 onMounted(() => {
   // body.style.overflowY = "hidden";

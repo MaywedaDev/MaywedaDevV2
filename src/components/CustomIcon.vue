@@ -1,5 +1,5 @@
 <template>
-  <div class="relative group inline-flex">
+  <div @click="toLink" class="relative group inline-flex">
     <Icon
       :icon="name"
       :class="[
@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 
-defineProps({
+const props = defineProps({
   name: {
     type: String,
     required: true,
@@ -32,5 +32,15 @@ defineProps({
     type: String,
     default: "",
   },
+  href: {
+    type: String,
+    default: "",
+  },
 });
+
+const toLink = () => {
+  if (props.href) {
+    window.open(props.href, "_blank");
+  }
+};
 </script>

@@ -121,7 +121,7 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollReveal from "./ScrollReveal.vue";
-import CurvedText from "./CurvedText.vue";
+
 import { Icon } from "@iconify/vue";
 // import TextPlugin from "gsap/TextPlugin";
 

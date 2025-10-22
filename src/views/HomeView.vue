@@ -54,7 +54,7 @@
         </template>
       </section-wrapper>
 
-      <gallery-section />
+      <!-- <gallery-section /> -->
 
       <marquee-name />
 
@@ -76,7 +76,20 @@ import Footer from "../components/Footer.vue";
 import ProjectsSection from "../components/ProjectsSection.vue";
 
 import MarqueeName from "../components/MarqueeName.vue";
-import GallerySection from "../components/GallerySection.vue";
+import { onMounted } from "vue";
+// import GallerySection from "../components/GallerySection.vue";
+
+// onMounted(() => {
+//   requestAnimationFrame(() => {
+//     const nav = document.getElementById("nav");
+//     if (nav)
+//       nav.scrollIntoView({
+//         behavior: "smooth",
+//         block: "start",
+//         inline: "nearest",
+//       });
+//   });
+// });
 </script>
 
 <style>

@@ -66,20 +66,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const trigger = ref<HTMLDivElement>();
 const ctaCont = ref<HTMLDivElement>();
 const sociaLinks = ref<HTMLDivElement>();
-const tl = gsap.timeline();
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: trigger.value,
+    start: "bottom bottom",
+  },
+});
+
+gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   if (ctaCont.value && sociaLinks.value)
     tl.from(ctaCont.value, {
       yPercent: 130,
       opacity: 0,
-      duration: 1.8,
-      scrollTrigger: {
-        trigger: trigger.value,
-        start: "top bottom",
-        markers: true,
-        scrub: true,
-      },
+      duration: 0.9,
     }).from(sociaLinks.value?.children, {
       yPercent: 130,
       opacity: 0,
@@ -89,7 +90,7 @@ onMounted(() => {
 });
 
 const scrollToTop = () => {
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 };
 
 const fuzzyText = "PROJECT IN MIND?";

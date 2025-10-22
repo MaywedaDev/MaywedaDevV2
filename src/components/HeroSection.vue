@@ -1,5 +1,6 @@
 <template>
   <nav
+    id="nav"
     class="w-full px-10 py-5 after:absolute after:bg-grey-100 relative after:h-[2px] after:bottom-0 after:left-0"
   >
     <div ref="navContent" class="flex w-full justify-between items-center">

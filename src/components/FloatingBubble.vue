@@ -20,7 +20,7 @@ const props = defineProps({
     required: true,
   },
   smMediaName: {
-    type: Object as () => "Gmail" | "LinkedIn" | "GitHub" | "Twitter",
+    type: String as () => "Gmail" | "LinkedIn" | "GitHub" | "Twitter",
     required: false,
     default: "Gmail",
   },

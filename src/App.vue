@@ -1,16 +1,34 @@
 <template>
   <LenisWrapper>
-    <div class="min-h-screen bg-body overflow-hidden text-white">
+    <div style="min-height: 100vh" class="bg-body text-white">
       <router-view />
       <div class="custom-cursor">
         <div ref="cursorDot" class="cursor-dot"></div>
         <div ref="cursorOutline" class="cursor-outline"></div>
       </div>
+
+      <StaggeredMenu
+        position="right"
+        class="fixed sm:hidden top-0 left-0 right-0 bottom-0 z-[9999]"
+        :items="menuItems"
+        :social-items="socialItems"
+        :display-socials="true"
+        :display-item-numbering="true"
+        menu-button-color="#E11717"
+        open-menu-button-color="#E11717"
+        :change-menu-color-on-open="true"
+        :colors="['#0A0A0A', '#E11717']"
+        logo-url="/src/assets/vue.svg"
+        accent-color="#E11717"
+        @menu-open="handleMenuOpen"
+        @menu-close="handleMenuClose"
+      />
     </div>
   </LenisWrapper>
 </template>
 
 <script setup lang="ts">
+import StaggeredMenu from "./components/StaggeredMenu.vue";
 import LenisWrapper from "./components/LenisWrapper.vue";
 import { onMounted, onUnmounted, ref } from "vue";
 import gsap from "gsap";
@@ -38,6 +56,22 @@ const onMouseMove = (e: MouseEvent) => {
     });
   }
 };
+
+const menuItems = [
+  { label: "Home", ariaLabel: "Go to home page", link: "/" },
+  { label: "About", ariaLabel: "Learn about us", link: "/about" },
+  { label: "Services", ariaLabel: "View our services", link: "/services" },
+  { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+];
+
+const socialItems = [
+  { label: "Twitter", link: "https://twitter.com" },
+  { label: "GitHub", link: "https://github.com" },
+  { label: "LinkedIn", link: "https://linkedin.com" },
+];
+
+const handleMenuOpen = () => console.log("Menu opened");
+const handleMenuClose = () => console.log("Menu closed");
 
 onMounted(() => {
   if ("scrollRestoration" in history) {

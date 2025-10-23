@@ -1,7 +1,7 @@
 <template>
   <nav
     id="nav"
-    class="w-full px-10 py-5 after:absolute after:bg-grey-100 relative after:h-[2px] after:bottom-0 after:left-0"
+    class="hidden sm:block w-full px-10 py-5 after:absolute after:bg-grey-100 relative after:h-[2px] after:bottom-0 after:left-0"
   >
     <div ref="navContent" class="flex w-full justify-between items-center">
       <p class="text-secondary text-3xl tBebas">Mayweda Dev</p>
@@ -145,6 +145,7 @@ const scrollToBio = () => {
   }
 };
 
+const mm = gsap.matchMedia();
 onMounted(() => {
   // body.style.overflowY = "hidden";
   const headerText = new SplitType(".name", { types: "words,chars" });
@@ -165,39 +166,42 @@ onMounted(() => {
     stagger: 0.08,
     ease: "elastic.out(1, 0.5)",
     duration: 1.5,
-  })
-    .from(".bubble", {
-      y: 60,
-      // x: 30,
-      opacity: 0,
-      duration: 0.6,
-      ease: "back.out",
-      onComplete: () => {
-        startFloating();
-      },
-      stagger: 0.2,
-    })
-    // .from(
-    //   "#marquee",
-    //   {
-    //     yPercent: 100,
-    //     opacity: 0,
-    //   },
-    //   "<"
-    // )
-    //@ts-ignore
-    .from([...navContent.value?.children], {
+  });
+
+  t1.from(".bubble", {
+    y: 60,
+    // x: 30,
+    opacity: 0,
+    duration: 0.6,
+    ease: "back.out",
+    onComplete: () => {
+      startFloating();
+    },
+    stagger: 0.2,
+  });
+
+  // add the nav children tween conditionally for larger screens (>= 640px)
+  mm.add("(min-width: 640px)", () => {
+    // @ts-ignore
+    t1.from([...navContent.value?.children], {
       yPercent: -100,
       stagger: 0.2,
       opacity: 0,
-    })
-    .to("nav", {
-      "--divider-width": "100%",
-      duration: 0.8,
-      onComplete: () => {
-        body.style.overflowY = "scroll";
-      },
-    })
+    });
+
+    return () => {
+      // cleanup if the media query is killed
+      gsap.killTweensOf([...navContent.value?.children] as any);
+    };
+  });
+
+  t1.to("nav", {
+    "--divider-width": "100%",
+    duration: 0.8,
+    onComplete: () => {
+      body.style.overflowY = "scroll";
+    },
+  })
     .to(".typed-text .char", {
       yPercent: 0,
       opacity: 1,
@@ -326,8 +330,5 @@ nav::after {
   box-shadow: 1px 1px 16px 12px #e1171777;
 }
 
-@media screen and (max-width: 640px) {
-  .pixel-container {
-  }
-}
+/* responsive rules removed (no styles needed here) */
 </style>

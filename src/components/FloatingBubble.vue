@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute w-[72px] h-[72px] rotate-[-22deg] bubble z-20"
+    class="absolute w-[42px] h-[42px] md:w-[72px] md:h-[72px] rotate-[-22deg] bubble z-20"
     :class="position"
     @click="goToLink"
   >

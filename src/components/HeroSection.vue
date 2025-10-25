@@ -17,7 +17,7 @@
       </div>
     </div>
   </nav>
-  <div class="w-full max-w-[1280px] px-4 md:px-10 my-10 mx-auto space-y-10">
+  <div class="w-full max-w-[1280px] px-4 md:px-10 mb-10 mx-auto space-y-10">
     <div
       class="w-full flex max-[960px]:flex-col overflow-hidden justify-between min-h-[65vh]"
     >
@@ -48,28 +48,30 @@
         <CurvedText />
       </div> -->
 
-      <div class="mx-auto my-auto w-[600px] relative z-10">
-        <h6 class="text-secondary ml-10 name tEllen text-3xl">Hi I'm</h6>
+      <div class="mx-auto my-auto max-w-[600px] relative z-10">
+        <h6 class="text-secondary ml-10 name tEllen text-xl md:text-3xl">
+          Hi I'm
+        </h6>
         <h1
-          class="text-secondary font-clash text-center text-9xl font-700 md:text-9xl uppercase font-bold inline-block name"
+          class="text-secondary font-clash text-center text-6xl font-700 md:text-9xl uppercase font-bold inline-block name"
         >
           Onuche Enyo
         </h1>
         <floating-bubble
           sm-media-name="GitHub"
-          position="top-5 -left-10"
+          position="top-5 left-4 mb:-left-10"
         ></floating-bubble>
         <floating-bubble
           sm-media-name="LinkedIn"
-          position="-bottom-7 -left-10"
+          position="-bottom-7 left-4 mb:-left-10"
         ></floating-bubble>
         <floating-bubble
           sm-media-name="Twitter"
-          position="bottom-24 -right-5"
+          position="bottom-24 right-3 md:-right-5"
         ></floating-bubble>
         <floating-bubble
           sm-media-name="Gmail"
-          position="bottom-0 -right-24"
+          position="bottom-0 right-3 mb:-right-24"
         ></floating-bubble>
       </div>
     </div>
@@ -78,7 +80,7 @@
       class="w-full flex flex-col gap-[calc(55vh_+40px)] justify-between items-center my-12"
     >
       <div>
-        <h2 class="text-5xl text-deepBlack text-center font-bold">
+        <h2 class="text-2xl md:text-5xl text-deepBlack text-center font-bold">
           Scroll down
         </h2>
         <Icon

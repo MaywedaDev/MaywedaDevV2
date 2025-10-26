@@ -109,6 +109,7 @@
                 :href="item.link"
                 :aria-label="item.ariaLabel"
                 :data-index="idx + 1"
+                @click="toggleMenu"
               >
                 <span
                   class="inline-block will-change-transform sm-panel-itemLabel [transform-origin:50%_100%]"

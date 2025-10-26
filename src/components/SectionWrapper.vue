@@ -24,7 +24,7 @@
 <!--  -->
 
 <script lang="ts" setup>
-import DecryptedText from "./DecryptedText.vue";
+import DecryptedText from "./vuebits/DecryptedText.vue";
 const props = defineProps({
   title: {
     type: String,

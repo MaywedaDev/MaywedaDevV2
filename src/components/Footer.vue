@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full">
-    <div class="h-[500px] grid place-content-center">
+  <div class="w-full" id="contact">
+    <div class="h-[200px] md:h-[500px] grid place-content-center">
       <FuzzyText
         :text="fuzzyText"
-        :font-size="80"
+        font-size="clamp(1.5rem, 6vw, 7rem)"
         font-weight="900"
         color="#E11717"
         :enable-hover="true"
@@ -13,28 +13,33 @@
     </div>
 
     <div class="w-full flex flex-col items-center gap-8" ref="trigger">
-      <h2 class="text-7xl font-clash uppercase" ref="ctaCont">Let's talk</h2>
+      <h2
+        class="text-4xl md:text-7xl font-bold font-clash uppercase"
+        ref="ctaCont"
+      >
+        Let's talk
+      </h2>
       <div class="flex gap-3 justify-center items-center" ref="sociaLinks">
         <CustomIcon
-          class-name="text-[50px] text-red hover:text-white"
+          class-name="text-[32px] md:text-[50px] text-red hover:text-white"
           name="simple-icons:gmail"
           alt="Email"
           href="mailto:enyoonuche1@gmail.com"
         />
         <CustomIcon
-          class-name="text-[50px] text-red hover:text-white"
+          class-name="text-[32px] md:text-[50px] text-red hover:text-white"
           name="ri:linkedin-box-fill"
           alt="LinkedIn"
           href="https://linkedin.com/in/mayweda/"
         />
         <CustomIcon
-          class-name="text-[50px] text-red hover:text-white"
+          class-name="text-[32px] md:text-[50px] text-red hover:text-white"
           name="ri:github-fill"
           alt="GitHub"
           href="https://github.com/MaywedaDev"
         />
         <CustomIcon
-          class-name="text-[50px] text-red hover:text-white"
+          class-name="text-[32px] md:text-[50px] text-red hover:text-white"
           name="ri:twitter-fill"
           alt="Twitter"
           href="https://twitter.com/playermayweda7"
@@ -42,13 +47,13 @@
       </div>
     </div>
 
-    <div class="w-full py-4 px-[112px]">
+    <div class="w-full py-4 px-8 sm:px-[56px] md:px-[112px]">
       <div class="flex w-full justify-between mt-10">
-        <p class="text-white">
+        <p class="text-white footer-link">
           Designed by <span class="text-accent text-red">Gideon</span>
         </p>
-        <p @click="scrollToTop" class="text-white">Back to Top</p>
-        <p class="text-white">MWD2025</p>
+        <p @click="scrollToTop" class="text-white footer-link">Back to Top</p>
+        <p class="text-white footer-link">MWD2025</p>
       </div>
     </div>
   </div>
@@ -57,7 +62,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import CustomIcon from "./CustomIcon.vue";
-import FuzzyText from "./FuzzyText.vue";
+import FuzzyText from "./vuebits/FuzzyText.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -81,12 +86,18 @@ onMounted(() => {
       yPercent: 130,
       opacity: 0,
       duration: 0.9,
-    }).from(sociaLinks.value?.children, {
-      yPercent: 130,
-      opacity: 0,
-      stagger: 0.5,
-      duration: 1.4,
-    });
+    })
+      .from(sociaLinks.value?.children, {
+        yPercent: 130,
+        opacity: 0,
+        stagger: 0.5,
+        duration: 1.4,
+      })
+      .from(".footer-link", {
+        yPercent: -100,
+        stagger: 0.4,
+        opacity: 0,
+      });
 });
 
 const scrollToTop = () => {

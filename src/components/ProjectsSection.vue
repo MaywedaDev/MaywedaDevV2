@@ -1,5 +1,8 @@
 <template>
-  <div class="w-100 py-10 px-4 md:px-10 lg:px-[112px] flex flex-col projects">
+  <div
+    class="w-100 py-10 px-4 md:px-10 lg:px-[112px] flex flex-col projects"
+    id="projects"
+  >
     <DecryptedText
       text="Projects"
       :speed="100"
@@ -23,11 +26,11 @@
       <project-card :project="item" v-for="(item, i) in projects" :key="i" />
     </div>
 
-    <button
+    <!-- <button
       class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl mx-auto hover:bg-red hover:text-white hover:shadow-lg transition-all duration-300 shine-btn"
     >
       SHOW MORE
-    </button>
+    </button> -->
   </div>
 </template>
 
@@ -37,7 +40,7 @@ import ProjectCard from "./ProjectCard.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import DecryptedText from "./DecryptedText.vue";
+import DecryptedText from "./vuebits/DecryptedText.vue";
 
 const projects = [
   {
@@ -112,16 +115,16 @@ const createTimeline = () => {
     });
   };
 
-  t2.from(".header .char", {
-    yPercent: 130,
-    opacity: 0,
-    stagger: 0.08,
-    ease: "back.out",
-    scrollTrigger: {
-      trigger: ".projects",
-      start: "top 75%",
-    },
-  });
+  // t2.from(".header .char", {
+  //   yPercent: 130,
+  //   opacity: 0,
+  //   stagger: 0.08,
+  //   ease: "back.out",
+  //   scrollTrigger: {
+  //     trigger: ".projects",
+  //     start: "top 75%",
+  //   },
+  // });
 
   typedChars.forEach((el) => {
     t2.add(createTween(el));

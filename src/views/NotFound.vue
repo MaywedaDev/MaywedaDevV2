@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import FuzzyText from "../components/FuzzyText.vue";
+import FuzzyText from "../components/vuebits/FuzzyText.vue";
 import { computed } from "vue";
 
 const message1 = "404";

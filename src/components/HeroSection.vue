@@ -59,11 +59,11 @@
         </h1>
         <floating-bubble
           sm-media-name="GitHub"
-          position="top-5 left-4 mb:-left-10"
+          position="top-5 left-4 md:-left-10"
         ></floating-bubble>
         <floating-bubble
           sm-media-name="LinkedIn"
-          position="-bottom-7 left-4 mb:-left-10"
+          position="-bottom-7 left-4 md:-left-10"
         ></floating-bubble>
         <floating-bubble
           sm-media-name="Twitter"
@@ -71,13 +71,13 @@
         ></floating-bubble>
         <floating-bubble
           sm-media-name="Gmail"
-          position="bottom-0 right-3 mb:-right-24"
+          position="bottom-0 right-3 md:-right-24"
         ></floating-bubble>
       </div>
     </div>
 
     <div
-      class="w-full flex flex-col gap-[calc(55vh_+40px)] justify-between items-center my-12"
+      class="w-full flex flex-col gap-[40px] justify-between items-center my-12"
     >
       <div>
         <h2 class="text-2xl md:text-5xl text-deepBlack text-center font-bold">
@@ -90,7 +90,7 @@
         />
       </div>
 
-      <div ref="bioSection">
+      <div ref="bioSection" id="about">
         <ScrollReveal
           :children="bio"
           :base-rotation="8"
@@ -123,7 +123,7 @@ import FloatingBubble from "./FloatingBubble.vue";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ScrollReveal from "./ScrollReveal.vue";
+import ScrollReveal from "./vuebits/ScrollReveal.vue";
 
 import { Icon } from "@iconify/vue";
 // import TextPlugin from "gsap/TextPlugin";
@@ -157,10 +157,10 @@ onMounted(() => {
     appendPixel();
   }
 
-  gsap.set(".typed-text .char", {
-    yPercent: 100,
-    opacity: 0,
-  });
+  // gsap.set(".typed-text .char", {
+  //   yPercent: 100,
+  //   opacity: 0,
+  // });
 
   t1.from(".name .char", {
     yPercent: 130,
@@ -191,10 +191,10 @@ onMounted(() => {
       opacity: 0,
     });
 
-    return () => {
-      // cleanup if the media query is killed
-      gsap.killTweensOf([...navContent.value?.children] as any);
-    };
+    // return () => {
+    //   // cleanup if the media query is killed
+    //   gsap.killTweensOf([...navContent.value?.children] as any);
+    // };
   });
 
   t1.to("nav", {
@@ -203,17 +203,17 @@ onMounted(() => {
     onComplete: () => {
       body.style.overflowY = "scroll";
     },
-  })
-    .to(".typed-text .char", {
-      yPercent: 0,
-      opacity: 1,
-      duration: 0.5,
-    })
-    .to(contactButton?.value as HTMLButtonElement, {
-      duration: 0.7,
-      opacity: "100%",
-      ease: "Power1.easeInOut",
-    });
+  });
+  // .to(".typed-text .char", {
+  //   yPercent: 0,
+  //   opacity: 1,
+  //   duration: 0.5,
+  // })
+  // .to(contactButton?.value as HTMLButtonElement, {
+  //   duration: 0.7,
+  //   opacity: "100%",
+  //   ease: "Power1.easeInOut",
+  // });
 
   gsap.to(".pixel", {
     // duration: 1.5,

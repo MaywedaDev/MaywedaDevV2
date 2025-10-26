@@ -1,5 +1,5 @@
 <template>
-  <LenisWrapper>
+  <LenisWrapper class="w-screen max-w-[100vw] overflow-hidden">
     <div style="min-height: 100vh" class="bg-body text-white">
       <router-view />
       <div class="custom-cursor">

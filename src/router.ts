@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "./views/HomeView.vue";
-import GithubView from "./views/GithubView.vue";
+// import GithubView from "./views/GithubView.vue";
 import NotFound from "./views/NotFound.vue";
 
 const routes = [

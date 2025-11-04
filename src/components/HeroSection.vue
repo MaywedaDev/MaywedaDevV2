@@ -11,9 +11,9 @@
             </div> -->
       <!-- <p class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</p> -->
       <div class="flex gap-x-5 items-center text-white">
-        <span>About</span>
-        <span>Works</span>
-        <span>Contact</span>
+        <span><a href="#about">About</a></span>
+        <span><a href="#projects">Works</a></span>
+        <span><a href="#contact">Contact</a></span>
       </div>
     </div>
   </nav>

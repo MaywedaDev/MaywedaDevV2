@@ -21,6 +21,8 @@
         logo-url="/src/assets/vue.svg"
         accent-color="#E11717"
       />
+
+      <SplashScreen />
     </div>
   </LenisWrapper>
 </template>
@@ -29,6 +31,7 @@
 import StaggeredMenu from "./components/vuebits/StaggeredMenu.vue";
 import LenisWrapper from "./components/LenisWrapper.vue";
 import { onMounted, onUnmounted, ref } from "vue";
+import SplashScreen from "./components/SplashScreen.vue";
 import gsap from "gsap";
 
 const cursorDot = ref<HTMLDivElement>();

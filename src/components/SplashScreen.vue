@@ -77,7 +77,7 @@ onMounted(() => {
   display: grid;
   place-items: center;
   z-index: 9999;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: #0a0a0a;
   color: white;
   will-change: transform, opacity;
   overflow: hidden;

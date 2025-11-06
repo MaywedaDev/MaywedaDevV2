@@ -1,19 +1,32 @@
 <template>
-  <nav
-    id="nav"
-    class="hidden sm:block w-full px-10 py-5 after:absolute after:bg-grey-100 relative after:h-[2px] after:bottom-0 after:left-0"
-  >
-    <div ref="navContent" class="flex w-full justify-between items-center">
+  <nav id="nav" class="hidden sm:block w-full px-10 py-5">
+    <div ref="navContent" class="flex w-full items-center">
       <p class="text-secondary text-3xl tBebas">Mayweda Dev</p>
       <!-- <div class="flex  gap-x-6 before:h-full relative before:w-px before:left-[50%] before:bg-secondary before:absolute">
                 <router-link to="/github" class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">github</router-link>
                 <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">projects</p>
             </div> -->
       <!-- <p class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</p> -->
-      <div class="flex gap-x-5 items-center text-white">
-        <span><a href="#about">About</a></span>
-        <span><a href="#projects">Works</a></span>
-        <span><a href="#contact">Contact</a></span>
+      <div
+        class="flex items-center uppercase mx-auto ml-[calc(((100%-400px)/2)-140px)]"
+        ref="navLinks"
+      >
+        <div
+          class="px-6 py-2 bg-white border border-white text-deepBlack flex gap-2 items-center"
+        >
+          <Icon icon="streamline-sharp:star-2-solid" class="text-red" />
+          <a href="#about">About</a>
+        </div>
+        <div class="px-6 py-2 border border-white flex gap-2 items-center">
+          <Icon icon="material-symbols:circle" class="text-red" />
+          <a href="#projects">Works</a>
+        </div>
+        <div
+          class="px-6 py-2 bg-white border border-white text-deepBlack flex gap-2 items-center"
+        >
+          <Icon icon="material-symbols:square-rounded" class="text-red" />
+          <a href="#contact">Contact</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -130,10 +143,10 @@ import useSplashScreenStatus from "../composables/useSplashScreenStatus";
 // import TextPlugin from "gsap/TextPlugin";
 
 const navContent = ref<HTMLDivElement>();
-const contactButton = ref<HTMLButtonElement>();
 const pixelCont = ref<HTMLDivElement>();
 const bioSection = ref<HTMLDivElement>();
 const scrollDText = ref<HTMLDivElement>();
+const navLinks = ref<HTMLDivElement>();
 const t1 = gsap.timeline();
 
 const { isSplashScreenFinished } = useSplashScreenStatus();
@@ -197,6 +210,13 @@ onMounted(() => {
       opacity: 0,
     });
 
+    t1.from([...navLinks.value?.children], {
+      yPercent: -100,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power2.out",
+    });
+
     // return () => {
     //   // cleanup if the media query is killed
     //   gsap.killTweensOf([...navContent.value?.children] as any);
@@ -207,15 +227,10 @@ onMounted(() => {
       yPercent: 60,
       opacity: 0,
       duration: 0.6,
+      onComplete: () => {
+        body.style.overflowY = "scroll";
+      },
     });
-
-  t1.to("nav", {
-    "--divider-width": "100%",
-    duration: 0.8,
-    onComplete: () => {
-      body.style.overflowY = "scroll";
-    },
-  });
   // .to(".typed-text .char", {
   //   yPercent: 0,
   //   opacity: 1,
@@ -288,13 +303,6 @@ watch(isSplashScreenFinished, (newVal) => {
 </script>
 
 <style>
-nav {
-  --divider-width: 0;
-}
-nav::after {
-  width: var(--divider-width);
-}
-
 @keyframes blink {
   0%,
   100% {

@@ -79,7 +79,7 @@
     <div
       class="w-full flex flex-col gap-[40px] justify-between items-center my-12"
     >
-      <div>
+      <div ref="scrollDText">
         <h2 class="text-2xl md:text-5xl text-deepBlack text-center font-bold">
           Scroll down
         </h2>
@@ -115,7 +115,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import FloatingBubble from "./FloatingBubble.vue";
 // import MarqueeName from "./MarqueeName.vue";
 // import SectionWrapper from "./SectionWrapper.vue";
@@ -126,13 +126,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollReveal from "./vuebits/ScrollReveal.vue";
 
 import { Icon } from "@iconify/vue";
+import useSplashScreenStatus from "../composables/useSplashScreenStatus";
 // import TextPlugin from "gsap/TextPlugin";
 
 const navContent = ref<HTMLDivElement>();
 const contactButton = ref<HTMLButtonElement>();
 const pixelCont = ref<HTMLDivElement>();
 const bioSection = ref<HTMLDivElement>();
+const scrollDText = ref<HTMLDivElement>();
 const t1 = gsap.timeline();
+
+const { isSplashScreenFinished } = useSplashScreenStatus();
 
 const bio =
   "Hi, I'm Enyo, a software dev, with a passion for creating beautiful, functional and interactive digital experiences. With a vast experience in full-stack development, I specialize in creating sleek React and Vue interfaces, mobile apps that feel effortless, and I also do indie game development (mostly for fun). Let's build something users will love.";
@@ -161,6 +165,8 @@ onMounted(() => {
   //   yPercent: 100,
   //   opacity: 0,
   // });
+
+  t1.pause();
 
   t1.from(".name .char", {
     yPercent: 130,
@@ -196,6 +202,12 @@ onMounted(() => {
     //   gsap.killTweensOf([...navContent.value?.children] as any);
     // };
   });
+  if (scrollDText.value)
+    t1.from(scrollDText.value, {
+      yPercent: 60,
+      opacity: 0,
+      duration: 0.6,
+    });
 
   t1.to("nav", {
     "--divider-width": "100%",
@@ -266,6 +278,13 @@ const appendPixel = () => {
   pixel.classList.add("pixel");
   pixelCont.value?.appendChild(pixel);
 };
+
+watch(isSplashScreenFinished, (newVal) => {
+  if (newVal) {
+    console.log("splash finished - play hero animation");
+    t1.play();
+  }
+});
 </script>
 
 <style>

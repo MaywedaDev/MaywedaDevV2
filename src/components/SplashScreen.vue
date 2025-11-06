@@ -6,13 +6,16 @@
     role="status"
     aria-label="Splash screen"
   >
-    <div ref="nameRef" class="name">{{ name }}</div>
+    <div ref="nameRef" class="authorName">{{ name }}</div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { gsap } from "gsap";
+import useSplashScreenStatus from "../composables/useSplashScreenStatus";
+
+const { setSplashScreenFinished } = useSplashScreenStatus();
 
 const name = "Mayweda Dev"; // change to your preferred display name
 const root = ref(null);
@@ -36,7 +39,8 @@ onMounted(() => {
       defaults: { ease: "power3.inOut" },
       onComplete: () => {
         visible.value = false;
-        emit("finished");
+        // console.log("splash animation complete");
+        setSplashScreenFinished();
       },
     });
 
@@ -50,14 +54,17 @@ onMounted(() => {
   // Use readyState check to handle that case.
   if (document.readyState === "complete") {
     // give a tiny delay so the intro is visible briefly
+    // console.log("window already loaded");
     setTimeout(() => onWindowLoad(), 200);
   } else {
+    console.log("adding window load listener");
     window.addEventListener("load", onWindowLoad);
   }
-});
 
-onBeforeUnmount(() => {
-  if (onWindowLoad) window.removeEventListener("load", onWindowLoad);
+  return () => {
+    // console.log("cleaning up splash screen listeners --");
+    if (onWindowLoad) window.removeEventListener("load", onWindowLoad);
+  };
 });
 </script>
 
@@ -76,7 +83,7 @@ onBeforeUnmount(() => {
   overflow: hidden;
 }
 
-.name {
+.authorName {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
   font-weight: 700;

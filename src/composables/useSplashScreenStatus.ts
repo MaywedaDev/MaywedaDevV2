@@ -1,8 +1,8 @@
-import { ref } from "vue";`
+import { ref } from "vue";
+
+const isSplashScreenFinished = ref(false);
 
 const useSplashScreenStatus = () => {
-  const isSplashScreenFinished = ref(false);
-
   const setSplashScreenFinished = () => {
     isSplashScreenFinished.value = true;
   };
@@ -11,4 +11,5 @@ const useSplashScreenStatus = () => {
     isSplashScreenFinished,
     setSplashScreenFinished,
   };
-}
+};
+export default useSplashScreenStatus;

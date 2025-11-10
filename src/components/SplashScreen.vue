@@ -88,24 +88,19 @@ onMounted(() => {
 
   const isMobile = window.matchMedia("(max-width: 1000px)").matches;
 
-  gsap.set(
-    [
-      ".split-overlay .intro h1 .first-char span",
-      ".split-overlay .outro h1 .char span",
-    ],
-    { y: "0%" }
-  );
+  // gsap.set([".intro h1 .first-char span"], { y: "0%" });
 
-  gsap.set(".split-overlay .intro h1 .first-char", {
-    x: isMobile ? "7.5rem" : "18rem",
-    y: isMobile ? "-1rem" : "-2.75rem",
+  gsap.set(".intro h1 .first-char", {
+    // x: isMobile ? "7.5rem" : "18rem",
+    // y: isMobile ? "-1rem" : "-2.75rem",
     fontWeight: "900",
-    scale: 0.75,
+    // scale: 0.75,
   });
 
-  gsap.set(".split-overlay .outro h1 .char", {
-    x: isMobile ? "-3rem" : "-8rem",
-    fontSize: isMobile ? "6rem" : "14rem",
+  gsap.set(".outro h1", {
+    // x: isMobile ? "-3rem" : "-8rem",
+    y: "-100%",
+    // fontSize: isMobile ? "6rem" : "14rem",
     fontWeight: "500",
   });
 
@@ -133,7 +128,7 @@ onMounted(() => {
   });
 
   tl.to(
-    ".preloader .intro h1 .char span",
+    ".intro h1 .char span",
     {
       y: "0%",
       duration: 0.75,
@@ -142,67 +137,68 @@ onMounted(() => {
     0.5
   )
     .to(
-      ".preloader .intro .char:not(.first-char) span",
+      ".intro .char:not(.first-char) span",
       {
         y: "100%",
         duration: 0.75,
+        stagger: 0.05,
       },
       2
     )
     .to(
-      ".preloader .outro .char span",
+      ".outro h1",
       {
         y: "0%",
         duration: 0.75,
         stagger: 0.075,
       },
-      2.5
+      2.25
     )
     .to(
-      ".preloader .intro .first-char",
+      ".intro .word",
       {
-        x: isMobile ? "9rem" : "21.25rem",
+        x: "50%",
         duration: 1,
       },
       3.5
-    )
-    .to(
-      ".preloader .outro .char",
-      {
-        x: isMobile ? "-3rem" : "-8rem",
-        duration: 1,
-      },
-      3.5
-    )
-    .to(
-      ".preloader .intro .first-char",
-      {
-        x: isMobile ? "7.5rem" : "18rem",
-        y: isMobile ? "-1rem" : "-2.75rem",
-        fontWeight: "900",
-        scale: 0.75,
-        duration: 0.75,
-      },
-      4.5
-    )
-    .to(
-      ".preloader .outro .char",
-      {
-        x: isMobile ? "-3rem" : "-8rem",
-        fontSize: isMobile ? "6rem" : "14rem",
-        fontWeight: "500",
-        duration: 0.75,
-        onComplete: () => {
-          gsap.set("preloader", {
-            clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)",
-          });
-          gsap.set("split-overlay", {
-            clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0 100%)",
-          });
-        },
-      },
-      4.5
     );
+  // .to(
+  //   ".preloader .outro .char",
+  //   {
+  //     x: isMobile ? "-3rem" : "-8rem",
+  //     duration: 1,
+  //   },
+  //   3.5
+  // )
+  // .to(
+  //   ".preloader .intro .first-char",
+  //   {
+  //     x: isMobile ? "7.5rem" : "18rem",
+  //     y: isMobile ? "-1rem" : "-2.75rem",
+  //     fontWeight: "900",
+  //     scale: 0.75,
+  //     duration: 0.75,
+  //   },
+  //   4.5
+  // )
+  // .to(
+  //   ".preloader .outro .char",
+  //   {
+  //     x: isMobile ? "-3rem" : "-8rem",
+  //     fontSize: isMobile ? "6rem" : "14rem",
+  //     fontWeight: "500",
+  //     duration: 0.75,
+  //     onComplete: () => {
+  //       gsap.set("preloader", {
+  //         clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)",
+  //       });
+  //       gsap.set("split-overlay", {
+  //         clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0 100%)",
+  //       });
+  //     },
+  //   },
+  //   4.5
+  // );
 
   tags.forEach((tag, index) => {
     tl.to(
@@ -216,19 +212,19 @@ onMounted(() => {
     );
   });
 
-  tl.to(
-    [".preloader", "split-overlay"],
-    {
-      y: (i) => (i === 0 ? "-50%" : "50%"),
-      duration: 1,
-      // onComplete: () => {
-      //     visible.value = false;
-      //     // console.log("splash animation complete");
-      //     setSplashScreenFinished();
-      // }
-    },
-    6
-  );
+  // tl.to(
+  //   [".preloader", "split-overlay"],
+  //   {
+  //     y: (i) => (i === 0 ? "-50%" : "50%"),
+  //     duration: 1,
+  //     // onComplete: () => {
+  //     //     visible.value = false;
+  //     //     // console.log("splash animation complete");
+  //     //     setSplashScreenFinished();
+  //     // }
+  //   },
+  //   6
+  // );
   // Intro animation (plays immediately on mount)
   //   gsap.from(nameRef.value, {
   //     opacity: 0,
@@ -291,14 +287,14 @@ onMounted(() => {
 
 .preloader,
 .tags-overlay {
-  z-index: 2;
+  z-index: 200;
 }
 
 .split-overlay {
-  z-index: 1;
+  z-index: 100;
 }
 
-.preloader .intro {
+.intro {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -310,8 +306,9 @@ onMounted(() => {
 .outro {
   position: absolute;
   top: 50%;
-  left: calc(50% + 10rem);
+  left: calc(50% + 4rem);
   transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 
 .tags-overlay .tag {
@@ -351,7 +348,7 @@ onMounted(() => {
 }
 
 .authorName .char,
-.outro h1 .char {
+.outro h1 {
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -359,7 +356,7 @@ onMounted(() => {
 }
 
 .authorName .char span,
-.outro h1 .char span {
+.outro h1 {
   display: inline-block;
   transform: translateY(100%);
   will-change: transform;

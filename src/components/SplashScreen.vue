@@ -38,7 +38,7 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { gsap } from "gsap";
 import CustomEase from "gsap/CustomEase";
-import SplitType from "split-type";
+import SplitType, { TypesList } from "split-type";
 import useSplashScreenStatus from "../composables/useSplashScreenStatus";
 
 // const { setSplashScreenFinished } = useSplashScreenStatus();
@@ -60,14 +60,15 @@ const splitTextElements = (
   addFirstCharClass = true
 ) => {
   const split = new SplitType(element, {
-    types,
+    types: types as TypesList,
     wordClass: "word",
     charClass: "char",
   });
 
   // Wrap each character in a span for animation
-  if (types.includes("chars"))
-    split.chars.forEach((char: HTMLElement, index) => {
+  if (types.includes("chars")) {
+    const chars = (split.chars ?? []) as HTMLElement[];
+    chars.forEach((char: HTMLElement, index) => {
       const span = document.createElement("span");
       span.innerText = char.innerText;
       char.innerText = "";
@@ -77,11 +78,12 @@ const splitTextElements = (
         char.classList.add("first-char");
       }
     });
+  }
 };
 
 onMounted(() => {
-  splitTextElements(nameRef.value as HTMLElement, "words,chars", true);
-  splitTextElements(splitNameRef.value as HTMLElement);
+  splitTextElements((nameRef.value ?? {}) as HTMLElement, "words,chars", true);
+  splitTextElements((splitNameRef.value ?? {}) as HTMLElement);
   document.querySelectorAll(".tags-overlay .tag p").forEach((el) => {
     splitTextElements(el as HTMLElement, "words,chars", true);
   });
@@ -113,7 +115,7 @@ onMounted(() => {
     // },
   });
 
-  const tags = gsap.utils.toArray(".tags-overlay .tag");
+  const tags = gsap.utils.toArray(".tags-overlay .tag") as HTMLElement[];
 
   tags.forEach((tag, index) => {
     tl.to(
@@ -310,14 +312,14 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translateY(-50%);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .tags-overlay .tag {
   position: absolute;
-  background: #0a0a0a;
+  /* background: #0a0a0a; */
   width: max-content;
-  color: #5a5a5a;
+  /* color: #5a5a5a; */
   overflow: hidden;
 }
 

@@ -90,12 +90,12 @@ onMounted(() => {
 
   // gsap.set([".intro h1 .first-char span"], { y: "0%" });
 
-  gsap.set(".intro h1 .first-char", {
-    // x: isMobile ? "7.5rem" : "18rem",
-    // y: isMobile ? "-1rem" : "-2.75rem",
-    fontWeight: "900",
-    // scale: 0.75,
-  });
+  // gsap.set(".intro h1 .first-char", {
+  //   // x: isMobile ? "7.5rem" : "18rem",
+  //   // y: isMobile ? "-1rem" : "-2.75rem",
+  //   fontWeight: "900",
+  //   // scale: 0.75,
+  // });
 
   gsap.set(".outro h1", {
     // x: isMobile ? "-3rem" : "-8rem",
@@ -155,50 +155,52 @@ onMounted(() => {
       2.25
     )
     .to(
-      ".intro .word",
+      ".intro .first-char",
       {
-        x: "50%",
+        x: "17.8rem",
         duration: 1,
       },
       3.5
+    )
+    // .to(
+    //   ".outro h1",
+    //   {
+
+    //     duration: 1,
+    //   },
+    //   3.5
+    // )
+    .to(
+      ".intro .first-char",
+      {
+        x: "18rem",
+        y: "-2.75rem",
+        // fontWeight: "900",
+        scale: 0.75,
+        duration: 0.75,
+      },
+      4.5
+    )
+    .to(
+      ".outro h1",
+      {
+        // x: isMobile ? "-3rem" : "-8rem",
+        x: "-2rem",
+        fontSize: "14rem",
+
+        fontWeight: "500",
+        duration: 0.75,
+        onComplete: () => {
+          gsap.set(".preloader", {
+            clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)",
+          });
+          gsap.set(".split-overlay", {
+            clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0 100%)",
+          });
+        },
+      },
+      4.5
     );
-  // .to(
-  //   ".preloader .outro .char",
-  //   {
-  //     x: isMobile ? "-3rem" : "-8rem",
-  //     duration: 1,
-  //   },
-  //   3.5
-  // )
-  // .to(
-  //   ".preloader .intro .first-char",
-  //   {
-  //     x: isMobile ? "7.5rem" : "18rem",
-  //     y: isMobile ? "-1rem" : "-2.75rem",
-  //     fontWeight: "900",
-  //     scale: 0.75,
-  //     duration: 0.75,
-  //   },
-  //   4.5
-  // )
-  // .to(
-  //   ".preloader .outro .char",
-  //   {
-  //     x: isMobile ? "-3rem" : "-8rem",
-  //     fontSize: isMobile ? "6rem" : "14rem",
-  //     fontWeight: "500",
-  //     duration: 0.75,
-  //     onComplete: () => {
-  //       gsap.set("preloader", {
-  //         clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)",
-  //       });
-  //       gsap.set("split-overlay", {
-  //         clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0 100%)",
-  //       });
-  //     },
-  //   },
-  //   4.5
-  // );
 
   tags.forEach((tag, index) => {
     tl.to(
@@ -212,19 +214,19 @@ onMounted(() => {
     );
   });
 
-  // tl.to(
-  //   [".preloader", "split-overlay"],
-  //   {
-  //     y: (i) => (i === 0 ? "-50%" : "50%"),
-  //     duration: 1,
-  //     // onComplete: () => {
-  //     //     visible.value = false;
-  //     //     // console.log("splash animation complete");
-  //     //     setSplashScreenFinished();
-  //     // }
-  //   },
-  //   6
-  // );
+  tl.to(
+    [".preloader", ".split-overlay"],
+    {
+      y: (i) => (i === 0 ? "-50%" : "50%"),
+      duration: 1,
+      // onComplete: () => {
+      //     visible.value = false;
+      //     // console.log("splash animation complete");
+      //     setSplashScreenFinished();
+      // }
+    },
+    6
+  );
   // Intro animation (plays immediately on mount)
   //   gsap.from(nameRef.value, {
   //     opacity: 0,
@@ -281,8 +283,8 @@ onMounted(() => {
 
 .preloader,
 .split-overlay {
-  background: #0a0a0a;
-  color: white;
+  background: #e11717;
+  color: black;
 }
 
 .preloader,
@@ -306,9 +308,9 @@ onMounted(() => {
 .outro {
   position: absolute;
   top: 50%;
-  left: calc(50% + 4rem);
-  transform: translate(-50%, -50%);
-  overflow: hidden;
+  left: 50%;
+  transform: translateY(-50%);
+  /* overflow: hidden; */
 }
 
 .tags-overlay .tag {
@@ -333,13 +335,19 @@ onMounted(() => {
   right: 15%;
 }
 
+.authorName {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .authorName,
 .outro h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
   text-align: center;
   line-height: 1;
-  font-size: clamp(2.2rem, 6vw, 6rem);
+  font-size: 6rem;
   transform-origin: center;
   will-change: transform, opacity;
   padding: 0.25rem 0.5rem;
@@ -364,6 +372,17 @@ onMounted(() => {
 
 .authorName .first-char {
   transform-origin: top left;
+}
+
+.preloader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: red;
 }
 
 @media screen and (max-width: 1000px) {

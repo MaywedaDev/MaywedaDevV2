@@ -41,7 +41,7 @@ import CustomEase from "gsap/CustomEase";
 import SplitType, { TypesList } from "split-type";
 import useSplashScreenStatus from "../composables/useSplashScreenStatus";
 
-// const { setSplashScreenFinished } = useSplashScreenStatus();
+const { setSplashScreenFinished } = useSplashScreenStatus();
 
 const name = "Mayweda Dev"; // change to your preferred display name
 const root = ref(null);
@@ -88,21 +88,10 @@ onMounted(() => {
     splitTextElements(el as HTMLElement, "words,chars", true);
   });
 
-  const isMobile = window.matchMedia("(max-width: 1000px)").matches;
-
-  // gsap.set([".intro h1 .first-char span"], { y: "0%" });
-
-  // gsap.set(".intro h1 .first-char", {
-  //   // x: isMobile ? "7.5rem" : "18rem",
-  //   // y: isMobile ? "-1rem" : "-2.75rem",
-  //   fontWeight: "900",
-  //   // scale: 0.75,
-  // });
+  const isMobile = window.matchMedia("(max-width: 960px)").matches;
 
   gsap.set(".outro h1", {
-    // x: isMobile ? "-3rem" : "-8rem",
     y: "-100%",
-    // fontSize: isMobile ? "6rem" : "14rem",
     fontWeight: "500",
   });
 
@@ -159,25 +148,17 @@ onMounted(() => {
     .to(
       ".intro .first-char",
       {
-        x: "17.8rem",
+        x: isMobile ? "7.5rem" : "17.8rem",
         duration: 1,
       },
       3.5
     )
-    // .to(
-    //   ".outro h1",
-    //   {
 
-    //     duration: 1,
-    //   },
-    //   3.5
-    // )
     .to(
       ".intro .first-char",
       {
-        x: "18rem",
         y: "-2.75rem",
-        // fontWeight: "900",
+
         scale: 0.75,
         duration: 0.75,
       },
@@ -186,9 +167,8 @@ onMounted(() => {
     .to(
       ".outro h1",
       {
-        // x: isMobile ? "-3rem" : "-8rem",
-        x: "-2rem",
-        fontSize: "14rem",
+        // x: "-2rem",
+        fontSize: isMobile ? "9rem" : "14rem",
 
         fontWeight: "500",
         duration: 0.75,
@@ -221,11 +201,11 @@ onMounted(() => {
     {
       y: (i) => (i === 0 ? "-50%" : "50%"),
       duration: 1,
-      // onComplete: () => {
-      //     visible.value = false;
-      //     // console.log("splash animation complete");
-      //     setSplashScreenFinished();
-      // }
+      onComplete: () => {
+        visible.value = false;
+        // console.log("splash animation complete");
+        setSplashScreenFinished();
+      },
     },
     6
   );
@@ -387,7 +367,7 @@ onMounted(() => {
   background: red;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   .outro h1 {
     left: calc(50% + 4rem);
   }
@@ -395,6 +375,13 @@ onMounted(() => {
   .authorName .char,
   .outro h1 .char {
     margin-top: 0.5rem;
+  }
+} */
+
+@media screen and (max-width: 960px) {
+  .authorName,
+  .outro h1 {
+    font-size: 2.5rem;
   }
 }
 </style>

@@ -356,17 +356,6 @@ onMounted(() => {
   transform-origin: top left;
 }
 
-.preloader::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: red;
-}
-
 /* @media screen and (max-width: 1000px) {
   .outro h1 {
     left: calc(50% + 4rem);

@@ -52,7 +52,11 @@
         <p class="text-white footer-link">
           Designed by <span class="text-accent text-red">Gideon</span>
         </p>
-        <p @click="scrollToTop" class="text-white footer-link">Back to Top</p>
+        <div class="flex gap-3 items-center footer-link">
+          <p @click="scrollToTop" class="text-white">Back to Top</p>
+          <Icon icon="mdi:arrow-up" />
+        </div>
+
         <p class="text-white footer-link">MWD2025</p>
       </div>
     </div>
@@ -65,6 +69,7 @@ import CustomIcon from "./CustomIcon.vue";
 import FuzzyText from "./vuebits/FuzzyText.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Icon } from "@iconify/vue";
 
 // Got a question, proposal or want to work together on something? Feel
 //           free to reach out.

@@ -2,11 +2,7 @@
   <nav id="nav" class="hidden sm:block w-full px-10 py-5">
     <div ref="navContent" class="flex w-full items-center">
       <p class="text-secondary text-3xl tBebas">Mayweda Dev</p>
-      <!-- <div class="flex  gap-x-6 before:h-full relative before:w-px before:left-[50%] before:bg-secondary before:absolute">
-                <router-link to="/github" class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">github</router-link>
-                <p class="text-accent before:duration-300 before:w-0 hover:before:w-full before:absolute before:h-px before:bg-secondary relative before:-bottom-1 hover:text-secondary duration-300 text-lg">projects</p>
-            </div> -->
-      <!-- <p class="text-accent text-[14px] uppercase">Lagos, NG 5:19PM</p> -->
+
       <div
         class="flex items-center uppercase mx-auto ml-[calc(((100%-400px)/2)-140px)]"
         ref="navLinks"
@@ -34,33 +30,6 @@
     <div
       class="w-full flex max-[960px]:flex-col overflow-hidden justify-between min-h-[65vh]"
     >
-      <!-- <div class="min-w-[960px]:max-w-[500px] w-full">
-        <h6 class="text-secondary name tEllen text-4xl leading-[60px]">
-          Hi I'm
-        </h6>
-        <h1 class="tBebas text-white font-weight-bold text-[96px] name">
-          Enyo Onuche
-        </h1>
-        <p
-          class="font-weight-light mb-2 max-w-[640px] min-[960px]:max-w-[400px] typed-text flex flex-wrap"
-        >
-          I don’t just write code — I craft digital experiences. With 6 years in
-          full-stack development, I bring ideas to life through sleek React and
-          Vue interfaces, powerful Node.js backends, and mobile apps that feel
-          effortless. Let’s build something users will love.
-        </p>
-        <button
-          class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl opacity-0 my-4 shine-btn hover:bg-red"
-          ref="contactButton"
-        >
-          LET'S TALK
-        </button>
-      </div>
-
-      <div class="max-[960px]:mx-auto">
-        <CurvedText />
-      </div> -->
-
       <div class="mx-auto my-auto max-w-[600px] relative z-10">
         <h6 class="text-secondary ml-10 name tEllen text-xl md:text-3xl">
           Hi I'm
@@ -130,9 +99,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 import FloatingBubble from "./FloatingBubble.vue";
-// import MarqueeName from "./MarqueeName.vue";
-// import SectionWrapper from "./SectionWrapper.vue";
-// import ProjectCard from "./ProjectCard.vue";
+
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -140,7 +107,6 @@ import ScrollReveal from "./vuebits/ScrollReveal.vue";
 
 import { Icon } from "@iconify/vue";
 import useSplashScreenStatus from "../composables/useSplashScreenStatus";
-// import TextPlugin from "gsap/TextPlugin";
 
 const navContent = ref<HTMLDivElement>();
 const pixelCont = ref<HTMLDivElement>();

@@ -3,12 +3,6 @@
     <hero-section />
     <div class="">
       <projects-section />
-      <!-- <section-wrapper name="WORKS" position="left">
-                <marquee-scroll title="Mayweda" direction="ltr" />
-                <marquee-scroll title="QuizWiz" direction="rtl" />
-                <marquee-scroll title="Nftocean" direction="ltr"/>
-                <marquee-scroll title="Allfootball" direction="rtl" />
-            </section-wrapper> -->
 
       <section-wrapper title="about" ltr>
         <template #sub>

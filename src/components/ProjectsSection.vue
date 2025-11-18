@@ -25,12 +25,6 @@
     >
       <project-card :project="item" v-for="(item, i) in projects" :key="i" />
     </div>
-
-    <!-- <button
-      class="border-2 border-red py-2 px-4 bg-transparent uppercase rounded-3xl mx-auto hover:bg-red hover:text-white hover:shadow-lg transition-all duration-300 shine-btn"
-    >
-      SHOW MORE
-    </button> -->
   </div>
 </template>
 
@@ -114,17 +108,6 @@ const createTimeline = () => {
       display: "none",
     });
   };
-
-  // t2.from(".header .char", {
-  //   yPercent: 130,
-  //   opacity: 0,
-  //   stagger: 0.08,
-  //   ease: "back.out",
-  //   scrollTrigger: {
-  //     trigger: ".projects",
-  //     start: "top 75%",
-  //   },
-  // });
 
   typedChars.forEach((el) => {
     t2.add(createTween(el));

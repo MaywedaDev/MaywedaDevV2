@@ -1,6 +1,7 @@
 <template>
   <div
     class="w-100 max-w-[600px] px-4 py-8 bg-[rgba(225_,23_,23_,0.02)] border border-borderRed rounded-lg flex flex-col project-card cursor-pointer"
+    v-if="project"
   >
     <div class="flex gap-3 text-[12px] mb-2">
       <CustomIcon
@@ -42,7 +43,7 @@
       </p>
     </div>
 
-    <p class="text-[14px] text-zinc-500 flex-grow mb-2">
+    <p class="text-[14px] text-zinc-500 flex-grow mb-2 whitespace-pre-line">
       {{
         project?.desc ||
         "This is a placeholder for the project description. You can provide more details about the project, its purpose, and any challenges you overcame during development."
@@ -50,8 +51,10 @@
     </p>
     <div class="flex gap-x-2 mb-3">
       <CustomIcon
-        v-for="(icon, i) in icons"
-        :key="i"
+        v-for="(icon, i) in icons.filter((icon) =>
+          project?.icons.includes(icon.key)
+        )"
+        :key="icon.key"
         :name="icon.name"
         :alt="icon.alt"
       />
@@ -93,13 +96,7 @@
 <script lang="ts" setup>
 import CustomIcon from "./CustomIcon.vue";
 
-type Project = {
-  name: string;
-  image: string;
-  link: string;
-  desc?: string;
-  intro?: string;
-};
+import type { Project } from "./types";
 
 const props = defineProps({
   project: {
@@ -109,20 +106,54 @@ const props = defineProps({
 
 const icons = [
   {
+    key: "react",
     name: "mdi:react",
     alt: "React.js",
   },
   {
+    key: "vue",
     name: "mdi:vuejs",
     alt: "Vue.js",
   },
   {
+    key: "node",
     name: "fa6-brands:node",
     alt: "Node.js",
   },
   {
+    key: "tailwind",
     name: "mdi:tailwind",
     alt: "Tailwind CSS",
+  },
+  {
+    key: "jQuery",
+    name: "mdi:jquery",
+    alt: "jQuery",
+  },
+  {
+    key: "react-native",
+    name: "tabler:brand-react-native",
+    alt: "React Native",
+  },
+  {
+    key: "firebase",
+    name: "mdi:firebase",
+    alt: "Firebase",
+  },
+  {
+    key: "angular",
+    name: "mdi:angular",
+    alt: "Angular",
+  },
+  {
+    key: "typescript",
+    name: "proicons:typescript",
+    alt: "TypeScript",
+  },
+  {
+    key: "bootstrap",
+    name: "mdi:bootstrap",
+    alt: "Bootstrap",
   },
 ];
 </script>

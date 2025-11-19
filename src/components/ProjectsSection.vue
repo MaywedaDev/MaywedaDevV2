@@ -35,38 +35,96 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import DecryptedText from "./vuebits/DecryptedText.vue";
+import type { Project } from "./types";
 
-const projects = [
+const projects: Project[] = [
   {
     name: "QuizWiz",
     image: "src/assets/images/projects/quizwiz_proj.png",
     link: "https://quiz_wiz.vercel.app",
-    desc: "A simple quiz application",
+    intro: "Interactive quiz platform with 13 topics",
+    desc: "A simple quiz application, made with Angular, Typescript, Bootstrap and the Trivia API. \n Consists of Quizzes on 13 different topics ranging from History to Music to Science, and has an interactive results review section where user can see a detailed breakdown on the questions and answers on all of the quizzes taken",
+    icons: ["angular", "typescript", "bootstrap"],
   },
   {
-    name: "",
+    name: "PodOfCast",
     image: "",
     link: "",
+    intro: "Beautiful podcast platform with smooth animations",
+    desc: "An implementation of a figma community template 'PodOfCast' by Flowbase.co.\n Made of beautifully designed and implemented pages, with animations, transforms and transitions and page transitions.\n Made with Vite, React, GSAP and Tailwind. Also made use of Swiper.js ",
+    icons: ["react", "gsap", "tailwind"],
   },
   {
-    name: "",
+    name: "Infinite Scrolling Gallery",
     image: "",
     link: "",
+    intro: "Endless image gallery with dynamic loading",
+    desc: "An Infinite Scrolling Image Gallery.\n Made with jQuery, BootStrap and Pexels API",
+    icons: ["jQuery", "bootstrap"],
   },
   {
-    name: "",
+    name: "NftOcean",
     image: "",
     link: "",
+    intro: "NFT marketplace showcasing digital assets",
+    desc: "An NFT Marketplace Concept website.\n Made with Vue.js and Bootstrap",
+    icons: ["vue", "bootstrap"],
   },
   {
-    name: "",
+    name: "AceCoin Pay",
     image: "",
     link: "",
+    intro: "Modern payment interface for NFC cards",
+    desc: "A concept for a beautiful designed card/NFC payment page.\n Made with React and Tailwind",
+    icons: ["react", "tailwind"],
   },
   {
-    name: "",
+    name: "Coca design",
     image: "",
     link: "",
+    intro: "Pixel-perfect Figma design implementation",
+    desc: "A Figma community template 'Coca Design' implemented exactly according to the design.\n Made with React, Tailwind and Swiper.js",
+    icons: ["react", "tailwind"],
+  },
+  {
+    name: "ArticleGPT",
+    image: "",
+    link: "",
+    intro: "AI-powered article generation with style control",
+    desc: "An Article Generator WebApp that can generate essays or write-ups using various different narration styles, from a set of keywords.\n Also can control the keyword density and generate new writing ideas.\n Made with Vue.js, Typescript and Gemini API",
+    icons: ["vue", "typescript"],
+  },
+  {
+    name: "Ask a Question",
+    image: "",
+    link: "",
+    intro: "Fun decision-making and fortune-telling app",
+    desc: "A fun, interactive decision making website that can help make a choice in a list of decisions, suggest a fun activity for you to do, or predict your own future!!!. \n Made with jQuery and Typed.js",
+    icons: ["jQuery"],
+  },
+  {
+    name: "Multi-step Form | FrontEndMentors",
+    image: "",
+    link: "",
+    intro: "Animated product customization challenge",
+    desc: "A fun FrontEndMentors challenge in which I built an animated product customization and purchase page. \n Made with jQuery",
+    icons: ["jQuery"],
+  },
+  {
+    name: "Firebase Chat",
+    image: "",
+    link: "",
+    intro: "Real-time messaging with Firebase backend",
+    desc: "A Chat Application built with Firebase and React Native",
+    icons: ["react-native", "firebase"],
+  },
+  {
+    name: "WallyAI",
+    image: "",
+    link: "",
+    intro: "AI wallpaper generation for any device",
+    desc: "An upcoming wallpaper generation mobile app, editing and sharing app, that allows creation of wallpapers for any device, dimension, or art style. Currently in development",
+    icons: ["react-native", "tailwind"],
   },
 ];
 

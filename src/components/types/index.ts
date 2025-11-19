@@ -5,4 +5,5 @@ export type Project = {
   desc?: string;
   intro?: string;
   icons: string[];
+  git: string;
 };

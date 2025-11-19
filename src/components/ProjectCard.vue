@@ -3,7 +3,7 @@
     class="w-100 max-w-[600px] px-4 py-8 bg-[rgba(225_,23_,23_,0.02)] border border-borderRed rounded-lg flex flex-col project-card cursor-pointer"
     v-if="project"
   >
-    <div class="flex gap-3 text-[12px] mb-2">
+    <!-- <div class="flex gap-3 text-[12px] mb-2">
       <CustomIcon
         name="streamline-freehand:worldwide-web-browser"
         alt="Frontend"
@@ -29,7 +29,7 @@
         alt="iOS"
         className="text-[20px] text-red"
       />
-    </div>
+    </div> -->
 
     <div class="space-y-1 mb-4">
       <h3 class="text-white text-xl font-semibold">
@@ -76,14 +76,14 @@
       </div>
     </div> -->
     <div class="flex gap-3 justify-end">
-      <a :href="project?.link || '#'" target="_blank" class="">
+      <a v-if="project.link" :href="project?.link" target="_blank" class="">
         <CustomIcon
           name="streamline-freehand:website-development-browser-source-code"
           alt="Project Website"
           className="text-[40px] text-red hover:text-white"
         />
       </a>
-      <a href="#" class="">
+      <a :href="project.git" class="" target="_blank">
         <CustomIcon
           name="line-md:github-loop"
           alt="GitHub Repository"

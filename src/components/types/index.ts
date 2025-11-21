@@ -6,4 +6,5 @@ export type Project = {
   intro?: string;
   icons: string[];
   git: string;
+  type: ("android" | "ios" | "frontend" | "backend")[];
 };

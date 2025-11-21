@@ -23,7 +23,7 @@
       </div>
 
       <header
-        class="top-0 left-0 z-20 absolute flex justify-between items-center bg-transparent p-[2em] w-full pointer-events-none staggered-menu-header"
+        class="top-0 left-0 z-20 absolute flex backdrop-blur-lg justify-between items-center bg-transparent p-[2em] w-full pointer-events-none staggered-menu-header"
         aria-label="Main navigation header"
       >
         <div

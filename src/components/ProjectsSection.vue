@@ -46,6 +46,7 @@ const projects: Project[] = [
     desc: "A simple quiz application, made with Angular, Typescript, Bootstrap and the Trivia API. \n Consists of Quizzes on 13 different topics ranging from History to Music to Science, and has an interactive results review section where user can see a detailed breakdown on the questions and answers on all of the quizzes taken",
     icons: ["angular", "typescript", "bootstrap"],
     git: "https://github.com/MaywedaDev/QuizWiz",
+    type: ["frontend"],
   },
   {
     name: "Infinite Scrolling Gallery",
@@ -55,6 +56,7 @@ const projects: Project[] = [
     desc: "An Infinite Scrolling Image Gallery.\n Made with jQuery, BootStrap and Pexels API",
     icons: ["jQuery", "bootstrap"],
     git: "https://github.com/MaywedaDev/Infinite-scrolling-gallery",
+    type: ["frontend"],
   },
 
   {
@@ -65,6 +67,7 @@ const projects: Project[] = [
     desc: "An NFT Marketplace Concept website.\n Made with Vue.js and Bootstrap",
     icons: ["vue", "bootstrap"],
     git: "https://github.com/MaywedaDev/NftOcean",
+    type: ["frontend"],
   },
   {
     name: "AceCoin Pay",
@@ -74,6 +77,7 @@ const projects: Project[] = [
     desc: "A concept for a beautiful designed card/NFC payment page.\n Made with React and Tailwind",
     icons: ["react", "tailwind"],
     git: "https://github.com/MaywedaDev/acecoin_pay",
+    type: ["frontend"],
   },
   {
     name: "ArticleGPT",
@@ -83,6 +87,7 @@ const projects: Project[] = [
     desc: "An Article Generator WebApp that can generate essays or write-ups using various different narration styles, from a set of keywords.\n Also can control the keyword density and generate new writing ideas.\n Made with Vue.js, Typescript and Gemini API",
     icons: ["vue", "typescript"],
     git: "https://github.com/MaywedaDev/coca_design",
+    type: ["frontend"],
   },
   {
     name: "Coca design",
@@ -92,6 +97,7 @@ const projects: Project[] = [
     desc: "A Figma community template 'Coca Design' implemented exactly according to the design.\n Made with React, Tailwind and Swiper.js",
     icons: ["react", "tailwind"],
     git: "https://github.com/MaywedaDev/coca_design",
+    type: ["frontend"],
   },
 
   {
@@ -102,6 +108,7 @@ const projects: Project[] = [
     desc: "A fun, interactive decision making website that can help make a choice in a list of decisions, suggest a fun activity for you to do, or predict your own future!!!. \n Made with jQuery and Typed.js",
     icons: ["jQuery"],
     git: "https://github.com/MaywedaDev/Ask-a-Question.repo",
+    type: ["frontend"],
   },
   {
     name: "PodOfCast",
@@ -111,6 +118,7 @@ const projects: Project[] = [
     desc: "An implementation of a figma community template 'PodOfCast' by Flowbase.co.\n Made of beautifully designed and implemented pages, with animations, transforms and transitions and page transitions.\n Made with Vite, React, GSAP and Tailwind. Also made use of Swiper.js ",
     icons: ["react", "gsap", "tailwind"],
     git: "https://github.com/MaywedaDev/podOfCast",
+    type: ["frontend"],
   },
   {
     name: "Multi-step Form | FrontEndMentors",
@@ -120,6 +128,7 @@ const projects: Project[] = [
     desc: "A fun FrontEndMentors challenge in which I built an animated product customization and purchase page. \n Made with jQuery",
     icons: ["jQuery"],
     git: "https://github.com/MaywedaDev/Multi-step-form-main",
+    type: ["frontend"],
   },
   {
     name: "Firebase Chat",
@@ -129,15 +138,17 @@ const projects: Project[] = [
     desc: "A Chat Application built with Firebase and React Native",
     icons: ["react-native", "firebase"],
     git: "https://github.com/MaywedaDev/firebase-chat",
+    type: ["android", "ios"],
   },
   {
     name: "WallyAI",
     image: "",
     link: "",
     intro: "AI wallpaper generation for any device",
-    desc: "An upcoming wallpaper generation mobile app, editing and sharing app, that allows creation of wallpapers for any device, dimension, or art style. Currently in development",
+    desc: "An upcoming wallpaper generation mobile app, editing and sharing app, that allows creation of wallpapers for any device, dimension, or art style. Currently in development. Made with Supabase",
     icons: ["react-native", "tailwind"],
     git: "https://github.com/MaywedaDev/WallyAI",
+    type: ["android", "ios", "backend"],
   },
 ];
 
